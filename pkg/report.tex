@@ -1,5 +1,5 @@
-\documentclass[11pt,twocolumn,a4paper]{article}
-\usepackage[top=0.72in,bottom=0.78in,left=0.68in,right=0.68in,columnsep=0.26in]{geometry}
+\documentclass[10pt,twocolumn,a4paper]{article}
+\usepackage[top=0.62in,bottom=0.65in,left=0.58in,right=0.58in,columnsep=0.20in]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{mathptmx}
@@ -28,37 +28,35 @@
 % ---- headings ----
 \titleformat{\section}{\sffamily\bfseries\small\color{navy}}{\thesection.}{0.5em}{\MakeUppercase}[{\color{teal}\titlerule[0.5pt]}]
 \titleformat{\subsection}{\sffamily\bfseries\footnotesize\color{teal!70!black}}{\thesubsection}{0.5em}{}
-\titlespacing*{\section}{0pt}{9pt}{4pt}
-\titlespacing*{\subsection}{0pt}{6pt}{2pt}
-\let\oldsubsection\subsection
-\renewcommand{\subsection}{\Needspace*{4\baselineskip}\oldsubsection}
-\let\oldsection\section
-\renewcommand{\section}{\Needspace*{9\baselineskip}\oldsection}
-\linespread{1.01}\selectfont
+\titlespacing*{\section}{0pt}{5pt plus 1pt minus 1pt}{2pt}
+\titlespacing*{\subsection}{0pt}{3pt plus 1pt minus 1pt}{1pt}
+\linespread{0.97}\selectfont
 \setlength{\parskip}{0pt}
-\setlength{\parindent}{9pt}
-\setlist{nosep,leftmargin=1.1em,itemsep=1pt}
-\renewcommand{\arraystretch}{1.12}
-\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
-\setlength{\floatsep}{7pt plus 2pt minus 2pt}
-\setlength{\intextsep}{7pt plus 2pt minus 2pt}
-\setlength{\dbltextfloatsep}{8pt plus 2pt minus 2pt}
-\setlength{\abovecaptionskip}{3pt}
+\setlength{\parindent}{8.5pt}
+\setlist{nosep,leftmargin=1.0em,itemsep=0.5pt}
+\renewcommand{\arraystretch}{1.08}
+\setlength{\textfloatsep}{5pt plus 1pt minus 1pt}
+\setlength{\floatsep}{4pt plus 1pt minus 1pt}
+\setlength{\intextsep}{4pt plus 1pt minus 1pt}
+\setlength{\dbltextfloatsep}{5pt plus 1pt minus 1pt}
+\setlength{\dblfloatsep}{4pt plus 1pt minus 1pt}
+\setlength{\abovecaptionskip}{2pt}
+\setlength{\belowcaptionskip}{0pt}
 
-\renewcommand{\topfraction}{0.92}
-\renewcommand{\dbltopfraction}{0.92}
-\renewcommand{\bottomfraction}{0.3}
-\renewcommand{\textfraction}{0.08}
-\renewcommand{\floatpagefraction}{0.8}
-\renewcommand{\dblfloatpagefraction}{0.8}
-\setcounter{topnumber}{3}\setcounter{dbltopnumber}{2}\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.96}
+\renewcommand{\dbltopfraction}{0.96}
+\renewcommand{\bottomfraction}{0.4}
+\renewcommand{\textfraction}{0.04}
+\renewcommand{\floatpagefraction}{0.85}
+\renewcommand{\dblfloatpagefraction}{0.85}
+\setcounter{topnumber}{4}\setcounter{dbltopnumber}{4}\setcounter{bottomnumber}{2}\setcounter{totalnumber}{6}
 \sloppy
 
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancyhead[L]{\sffamily\scriptsize\color{navy}Segregation at the Point of Care: UX Critique and Grounded Design Proposal}
-\fancyhead[R]{\sffamily\scriptsize\color{navy}Group M (Group 9) $\cdot$ FUX 2026--27}
+\fancyhead[R]{\sffamily\scriptsize\color{navy}Group 9 $\cdot$ FUX 2026--27}
 \fancyfoot[C]{\sffamily\scriptsize\thepage\ / \pageref{LastPage}}
 \fancypagestyle{first}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\fancyfoot[C]{\sffamily\scriptsize\thepage\ / \pageref{LastPage}}}
 
@@ -75,12 +73,12 @@
 {\color{teal}\rule{\textwidth}{1.6pt}}\\[7pt]
 {\sffamily\bfseries\fontsize{17}{20}\selectfont\color{navy} Segregation at the Point of Care}\\[3pt]
 {\sffamily\fontsize{11.5}{14}\selectfont\color{navy} A UX Critique of Medical-Waste Handling at the Renovated IITGN Medical Centre\\ and a Literature-Grounded Design Proposal (AI-AMWS)}\\[7pt]
-{\sffamily\small\textbf{Group M (Group 9)}}
+{\sffamily\small\textbf{Group 9}}
 
 \quad{\small Vipul Sunil Patil (22110189), Vraj Rajdeep (22110215), Gaurav Budhwani (22110085), Anish (24110041), Tanish (23110327), Smit Bambhroliya (24110345)}\\
 {\small\itshape Foundations of User Experience (FUX), Semester 1, 2026--27 $\cdot$ Indian Institute of Technology Gandhinagar}\\
 {\small Instructor: Prof.\ Nuno M.\ Guimar\~aes $\cdot$ Topic 10: Medical Waste Management}\\
-{\small\sffamily\textbf{Project Repository:} \url{https://github.com/vipulSP2108/FoUI}}\\[5pt]
+{\small\sffamily\textbf{Project Repository (Fieldwork Images, Audio Recordings \& Data):} \url{https://github.com/vipulSP2108/FoUI}}\\[5pt]
 {\color{teal}\rule{\textwidth}{0.6pt}}
 \end{center}
 \vspace{-2pt}
@@ -160,14 +158,14 @@ We used a multi-visit comparative design. \emph{Primary data} were gathered acro
 \subsection{Instruments}
 \begin{itemize}
 \item \textbf{Hand-drawn architectural floor plan} (\figref{fig:rawplan}), sketched during our first on-site walkthrough to map clinical zones, patient flow, and bin locations.
-\item \textbf{Photographic audit} using mobile cameras, strictly restricted to waste receptacles, structural fixtures, and wall surfaces; no patients, clinical procedures, or human faces were photographed. From this audit we derived a \textbf{receptacle compliance checklist} (\tabref{tab:check}) and a \textbf{luminance-contrast sample} (\figref{fig:contrast}).
-\item \textbf{Semi-structured contextual inquiries} conducted across two visits with facility personnel in the tradition of contextual design and inquiry \cite{beyer1998}: (i)~Visit~1 (clinical perspective) with the \emph{Assistant Staff Nurse (N1)}, focusing on point-of-care clinical disposal, patient briefing practices, wall paint rationale, and perceived peak hours; (ii)~Visit~2 (operational perspective) with the \emph{Primary Waste Management Operator (P1)}, examining downstream segregation, transfer mechanics, dedicated shift staffing (including the 5:00~PM--9:00~PM support staff P2), and the external collection cadence.
+\item \textbf{Photographic audit} using mobile cameras, strictly restricted to waste receptacles, structural fixtures, and wall surfaces; no patients, clinical procedures, or human faces were photographed. Raw high-resolution photographs are preserved in the project repository (\url{https://github.com/vipulSP2108/FoUI}). From this audit we derived a \textbf{receptacle compliance checklist} (\tabref{tab:check}) and a \textbf{luminance-contrast sample} (\figref{fig:contrast}).
+\item \textbf{Semi-structured contextual inquiries} conducted across two visits with facility personnel in the tradition of contextual design and inquiry \cite{beyer1998}: (i)~Visit~1 (clinical perspective) with the \emph{Assistant Staff Nurse (N1)}, focusing on point-of-care clinical disposal, patient briefing practices, wall paint rationale, and perceived peak hours; (ii)~Visit~2 (operational perspective) with the \emph{Primary Waste Management Operator (P1)}, examining downstream segregation, transfer mechanics, dedicated shift staffing (including the 5:00~PM--9:00~PM support staff P2), and the external collection cadence. Recorded audio interactions (with names beeped/redacted for strict anonymity) and qualitative summaries are archived in the project repository (\url{https://github.com/vipulSP2108/FoUI}).
 \item \textbf{Lay-user card-sorting mental model study} ($N=14$) conducted on campus with students and visitors representative of clinic patients. Participants categorized six physical/pictorial representations of common clinical waste items into colour-coded containers to measure unassisted mental models and error rates.
 \item \textbf{Contextual observation} of room-by-room hardware, waste accumulation levels, and the outdoor balcony buffer rack.
 \end{itemize}
 
 \subsection{Ethics and permission}
-Nothing was touched, opened or moved. Photographs show equipment and physical surfaces only. For all on-site photographs, hand-drawn architectural floor plan sketches, and recorded audio interactions across both visits, explicit informed verbal consent was obtained from the respective healthcare and operational staff members present on-site. In strict accordance with academic research ethics, participant privacy, and institutional confidentiality mandates, all individual names, personal identifiers, and recording timestamps have been completely anonymized and redacted throughout this report. Individuals are designated strictly by functional role codes (\emph{Assistant Staff Nurse N1}, \emph{Primary Waste Operator P1}, \emph{Evening Support Staff P2}). Audio assets serve solely for empirical fact verification without direct attribution.
+Nothing was touched, opened or moved. Photographs show equipment and physical surfaces only. For all on-site photographs, hand-drawn architectural floor plan sketches, and recorded audio interactions across both visits, explicit informed verbal consent was obtained from the respective healthcare and operational staff members present on-site. In strict accordance with academic research ethics, participant privacy, and institutional confidentiality mandates, all individual names, personal identifiers, and recording timestamps have been completely anonymized and redacted throughout this report. Individuals are designated strictly by functional role codes (\emph{Assistant Staff Nurse N1}, \emph{Primary Waste Operator P1}, \emph{Evening Support Staff P2}). Audio assets and raw photographs serve solely for empirical fact verification without direct attribution, hosted under ethical anonymization in our repository: \url{https://github.com/vipulSP2108/FoUI}.
 
 \subsection{Analysis}
 We coded field notes and photographs inductively into thematic categories \cite{braun2006} and mapped them to Norman's design constructs. To ensure methodological rigor:
@@ -379,18 +377,20 @@ Each module reports fill level, and a lid-opening counter gives a second signal 
 
 \subsection{Feature C: Point-of-disposal guidance (Phase 1)}
 Each aperture has a diffused LED ring and a narrow-beam time-of-flight sensor (\figref{fig:station}). \textbf{Ambient:} a dim glow (green below 50\% fill, amber 50--80\%, red above 80\%). \textbf{Approach} (hand within about 60~cm): the ring shows the module's BMW colour, a nudge at the point of choice \cite{thaler2008}. \textbf{Confirmation:} one green pulse after the drop; an amber double-flash if the module is near capacity or the drop looks wrong. Colour is lit only on approach to avoid alarm fatigue by analogy to clinical monitor alarm hazards \cite{sendelbach2013}; an optional chime follows ergonomic multimodal warning guidelines with nocturnal dimming \cite{wickens2013}; pictogram and position repeat the colour for colour-blind users \cite{birch2012}; a dark bezel keeps the white sharps and yellow rings above the 3:1 contrast level \cite{wcag2023}. Crucially, under CPCB Rules 2016 \cite{bmw2016}, blue-stream waste (glassware and metal implants) requires puncture-proof containers or marked cardboard boxes; the Blue module is therefore specifically engineered with a certified rigid cardboard box insert rather than a flexible liner, ensuring regulatory compliance while maintaining optical ToF sensor alignment.
-\begin{figure*}[!t]
-\centering
-\includegraphics[width=0.74\textwidth]{fig/fig_station.png}
-\caption{Concept of the proposed station. (a) Front elevation with five modules; (b) the three ring states. Illustrative render by the group, not a built prototype.}\label{fig:station}
-\end{figure*}
-
 \subsection{Feature D: Need-based dispatch (Phase 2)}
 Housekeepers would get a ranked list in a mobile web app (\figref{fig:ui}a). Two rules set urgency: a 75\% fill threshold, and an elapsed holding limit. Crucially, the 75\% threshold is directly grounded in CPCB Healthcare Waste Management Guidelines \cite{cpcb2016guidelines}, which mandate that biomedical waste bags and containers must never be filled beyond three-quarters (75\%) capacity to allow secure tie-off and prevent bag puncture or spillage during manual carrying. Regarding holding time, while the BMW Rules allow up to 48 hours for untreated waste \cite{bmw2016}, external biomedical waste collection at this facility operates on a 72-hour cycle (Visit~2 inquiry); we therefore configure a stricter 12-hour in-room target to ensure prompt transfer to the ventilated balcony buffer trolley. Routing is computed as a travelling-salesperson path over rooms that breach either rule. The dashboard (\figref{fig:ui}b) adds a heat-map and an audit log with simple anomaly flags (a module filling far faster than its peers, lid actuations without fill displacement, or sharps-interlock overrides).
 \begin{figure*}[!t]
 \centering
-\includegraphics[width=0.74\textwidth]{fig/fig_ui.png}
+\begin{minipage}[t]{0.485\textwidth}
+\centering
+\includegraphics[width=\textwidth]{fig/fig_station_generated.png}
+\caption{Concept of the proposed station. (a) Front elevation with five modules; (b) the three ring states. Illustrative render by the group, not a built prototype.}\label{fig:station}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\textwidth}
+\centering
+\includegraphics[width=\textwidth]{fig/fig_ui_generated.png}
 \caption{Stakeholder interface concepts: (a) housekeeping app; (b) administrator dashboard. Values are illustrative placeholders for layout, not measured data.}\label{fig:ui}
+\end{minipage}
 \end{figure*}
 
 \subsection{Spatial placement and two-tier ergonomic zoning}
@@ -411,7 +411,7 @@ This spatial zoning directly operationalizes R6 and Norman's principle of natura
 \subsection{Technical risks, mitigations and bill of materials (BOM)}
 \textbf{False triggers:} staff walking past could light a ring; a narrow beam aimed at the aperture, a short dwell requirement and a brightness cap reduce this, and thresholds would need on-site tuning. \textbf{Fouling and disinfection:} sensors must be sealed and wipeable, with a self-test that flags faults, since a sensor that fails silently is worse than none. \textbf{Connectivity:} rings work from local logic offline, with a BLE-mesh relay. \textbf{Privacy:} no cameras in Phase~1; item verification by camera is deferred pending clinical consent.
 
-\textbf{Bill of Materials and Cost Feasibility:} Rather than presenting an unbounded electronic concept, we calculated a realistic order-of-magnitude unit BOM for an AI-AMWS 4-compartment station: (i)~ESP32-WROOM-32 MCU: \$5.50 (₹460); (ii)~4$\times$ VL53L1X time-of-flight optical range sensors: \$16.00 (₹1,340); (iii)~4$\times$ WS2812B addressable RGB LED aperture rings with diffusers: \$8.00 (₹670); (iv)~4$\times$ IP67 micro-limit switches for lid actuation logging: \$4.00 (₹330); (v)~Antimicrobial injection-moulded HDPE chassis and pedal linkages: \$55.00 (₹4,600). The total unit hardware BOM is approximately \$88.50 (₹7,400) per 4-compartment station, with a shared BLE/Wi-Fi edge gateway costing $\approx$\$35.00 (₹2,900) per clinical wing. This demonstrates that Phase~1 instrumentation is commercially feasible within standard institutional renovation capital outlays.
+\textbf{Bill of Materials and Cost Feasibility:} Rather than presenting an unbounded electronic concept, we calculated a realistic order-of-magnitude unit BOM for an AI-AMWS 4-compartment station: (i)~ESP32-WROOM-32 MCU: \$5.50 (INR~460); (ii)~4$\times$ VL53L1X time-of-flight optical range sensors: \$16.00 (INR~1,340); (iii)~4$\times$ WS2812B addressable RGB LED aperture rings with diffusers: \$8.00 (INR~670); (iv)~4$\times$ IP67 micro-limit switches for lid actuation logging: \$4.00 (INR~330); (v)~Antimicrobial injection-moulded HDPE chassis and pedal linkages: \$55.00 (INR~4,600). The total unit hardware BOM is approximately \$88.50 (INR~7,400) per 4-compartment station, with a shared BLE/Wi-Fi edge gateway costing $\approx$\$35.00 (INR~2,900) per clinical wing. This demonstrates that Phase~1 instrumentation is commercially feasible within standard institutional renovation capital outlays.
 
 % ================= 8 EVALUATION =================
 \section{Analytic Evaluation and Grounding}
@@ -458,10 +458,10 @@ Clinicians are not the problem. The design question is how to make the safe acti
 The renovation modernized the Medical Centre's architectural space and added a high-standard external buffer trolley, but waste handling inside clinical rooms remains crippled by unlabelled receptacles, broken lids, mismatched liners, and fragile verbal briefings. Through on-site walkthroughs, inter-rater verified photographic checklists, luminance contrast sampling, multi-stakeholder staff inquiries, and an empirical $N=14$ lay-user card-sorting study, we documented systemic failures in signifiers, constraints, and capacity feedback. Synthesizing Norman, Rasmussen, and Reason, we formulated a staged socio-technical evolution: immediate low-cost standardization (Phase~0), ambient point-of-disposal guidance and fill sensing (Phase~1), and predictive forecasting and route-optimized dispatch (Phase~2). With a realistic station unit BOM of $\approx$\$88.50, AI-AMWS demonstrates that safety-critical waste interfaces can be transformed from passive hazards into intuitive, error-preventing points of care.
 
 \section*{Acknowledgements and Reproducibility}
-We thank the Medical Centre staff for their time and candour, and Prof.\ Guimar\~aes for guidance on scope. Fieldwork protocols, raw survey tallies, and high-resolution figures are archived for academic peer review at \url{https://github.com/vipulSP2108/FoUI}.
+We thank the Medical Centre staff for their time and candour, and Prof.\ Guimar\~aes for guidance on scope. All fieldwork documentation, raw high-resolution on-site photographs, recorded audio assets (with spoken names redacted), survey confusion tallies, and \LaTeX\ source files are archived for academic peer review in our public GitHub repository: \url{https://github.com/vipulSP2108/FoUI}.
 
-\begin{thebibliography}{99}\fontsize{8}{9.4}\selectfont
-\setlength{\itemsep}{0pt}
+\begin{thebibliography}{99}\fontsize{6.8}{7.8}\selectfont
+\setlength{\itemsep}{-1.2pt}
 \bibitem{who2014} Y.\ Chartier \emph{et al.}, \emph{Safe Management of Wastes from Health-Care Activities}, 2nd~ed. Geneva: WHO, 2014.
 \bibitem{bmw2016} MoEFCC, Govt.\ of India, ``Bio-Medical Waste Management Rules, 2016,'' G.S.R.~343(E), Mar.~2016.
 \bibitem{prusstun2005} A.\ Pr\"uss-\"Ust\"un, E.\ Rapiti and Y.\ Hutin, ``Estimation of the global burden of disease attributable to contaminated sharps injuries among health-care workers,'' \emph{Am.\ J.\ Ind.\ Med.}, vol.~48, no.~6, pp.~482--490, 2005.
