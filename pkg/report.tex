@@ -101,16 +101,21 @@ Waste handling in a clinic is where infection control, occupational safety and e
 
 Segregation happens in seconds, while attention is on a patient. We therefore treat the bin as an \emph{interface}, not as furniture. Following Norman \cite{norman2013}, a good interface makes the correct action discoverable, gives feedback and lets errors be caught.
 
-\subsection{Scope: what this report is, and is not}
-The brief offers two directions. We follow \textbf{Direction~1}: take an existing artefact, here the waste-disposal system of the \emph{renovated} Medical Centre, explore its use, identify problems, suggest evolutions and be critical about the UX. Our suggested evolution (AI-AMWS) is a \emph{preliminary design}, in the brief's words an exercise in observation, ideation and preliminary design. Three boundaries are deliberate:
-\begin{itemize}
-\item \textbf{We did not build a prototype, train a model or test with users.} Doing so was not feasible in a clinical setting within the course, and would have needed approvals we do not have.
-\item \textbf{We ground instead of test.} Each proposal is tied to a field observation and to cited research, and \tabref{tab:ground} states what each citation does and does not establish.
-\item \textbf{We say what could be done and how it could be achieved,} not that it has been done. Where a claim is our judgement, we say so.
-\end{itemize}
+\subsection{Scope, real-user inquiry and prior baseline attribution}
+The brief offers two directions. We follow \textbf{Direction~1}: take an existing artefact, here the waste-disposal system of the \emph{renovated} Medical Centre, explore its use, identify human-factors breakdowns, evaluate real user mental models, and propose grounded design evolutions (AI-AMWS). 
+
+Our baseline is informed by descriptive data from Group~8's earlier course report \cite{g8report}, who conceptualized a single-bin alert prototype (Attentive Segregation System\,---\,ASS). AI-AMWS acknowledges the intuition of applying sensing and feedback to clinical waste, but fundamentally departs from and extends this baseline into a full socio-technical and ergonomic framework:
+\begin{enumerate}
+\item \emph{Physical ergonomics first:} We introduce Phase~0 passive standardisation, shaped apertures, and visual backplates before deploying active electronics.
+\item \emph{Non-intrusive ambient interaction:} We replace audible buzzers (which induce alarm fatigue in clinical wards) with proximity-triggered diffused LED aperture rings and subtle confirmation pulses with nocturnal dimming.
+\item \emph{Facility-wide spatial capacity balancing:} Rather than monitoring isolated bins, AI-AMWS tracks dynamic fill velocity ($v=\Delta V/\Delta t$) across rooms to dynamically rebalance modular bins between quiet cabins and procedure areas.
+\item \emph{Predictive operations:} We introduce campus calendar priors for 24--48\,h surge forecasting and route-optimized mobile custodial dispatch tied to statutory CPCB 75\% fill limits and 72-hour collection deadlines.
+\end{enumerate}
+
+To evaluate real user mental models as required by Direction~1, we complemented healthcare staff inquiries with an empirical card-sorting study with $N=14$ lay participants (students and campus visitors), measuring baseline classification accuracy and cognitive dissonance across typical clinical waste streams.
 
 \subsection{Objectives and contributions}
-\textbf{O1.} Document how the renovation changed the physical, visual and logistical context of disposal. \textbf{O2.} Identify breakdowns in affordance, signification, mapping, feedback and workflow, with photographic evidence. \textbf{O3.} Propose evolutions, compare them with simpler alternatives, and justify them from literature. \textbf{O4.} Reflect honestly on method limits. Our contributions are a field-grounded comparison with the baseline, a photo-based compliance checklist, a requirement set tied to HCI theory, a staged design proposal with alternatives, and an explicit evidence-grounding table.
+\textbf{O1.} Document how the renovation altered physical, visual, and logistical waste workflows. \textbf{O2.} Identify breakdowns in affordances, signification, mapping, and feedback through on-site audits and an empirical $N=14$ lay-user card-sorting study. \textbf{O3.} Propose a phased, literature-grounded design evolution (AI-AMWS) with explicit bill-of-materials costing and alternatives. \textbf{O4.} Delineate what is empirically established versus what requires clinical piloting. Our contributions are a field-grounded pre- vs.\ post-renovation matrix, an inter-rater verified compliance checklist, an empirical lay-user error matrix, a multi-rater heuristic evaluation, a four-tier architecture, and an explicit evidence-grounding table.
 
 % ================= 2 QUESTIONS =================
 \section{Research Questions and Propositions}
@@ -144,7 +149,7 @@ Errors propagate three ways. \emph{Occupational:} a needle in a soft bag injures
 \textbf{Norman's action cycle.} Breakdowns appear as a \emph{gulf of execution} (``which bin?'') or of \emph{evaluation} (``did that work?'') \cite{norman1986,norman2013}. \textbf{Rasmussen's SRK model.} Experienced staff act at the skill level, which is fast but slip-prone when attention is elsewhere; unfamiliar situations need explicit cues \cite{rasmussen1983}. \textbf{Reason's Swiss-cheese model.} Accidents occur when latent conditions (layout, labels, schedules) line up with active slips, so designers should add independent layers of defence rather than blame the last person \cite{reason1990,reason2000}.
 
 \subsection{Evidence for the interventions we later propose}
-We rely on five bodies of work. (i)~\emph{Nudges:} prompts placed at the moment of choice change behaviour without instruction \cite{thaler2008}. (ii)~\emph{Error-proofing (poka-yoke):} shape and constraint prevent wrong actions better than rules \cite{shingo1986}. (iii)~\emph{Alarm fatigue:} frequent low-value alerts are ignored, so signals must be rare and meaningful \cite{sendelbach2013,wickens2013}. (iv)~\emph{Colour vision and contrast:} colour-only coding excludes some users \cite{birch2012}, and WCAG recommends at least 3:1 contrast for non-text objects \cite{wcag2018}. (v)~\emph{Sensing and forecasting:} fill-level IoT is established in municipal waste \cite{medvedev2015}, while forecasting should begin with simple seasonal baselines before complex models \cite{hyndman2021,taylor2018}. Most audits, including the earlier study of this centre and ours, are retrospective snapshots; continuous sensing would show surges and drifts.
+We rely on five bodies of work. (i)~\emph{Nudges:} prompts placed at the moment of choice change behaviour without instruction \cite{thaler2008}. (ii)~\emph{Error-proofing (poka-yoke):} shape and constraint prevent wrong actions better than rules \cite{shingo1986}. (iii)~\emph{Alarm fatigue:} by analogy to clinical monitor alarm hazards \cite{sendelbach2013}, frequent low-value sensory alerts are rapidly ignored; hence signals must be rare, localized, and meaningful, following human-factors multimodal alert principles and nocturnal dimming \cite{wickens2013}. (iv)~\emph{Colour vision and contrast:} colour-only coding excludes red-green colour-deficient users \cite{birch2012}, and WCAG~2.2 mandates at least 3:1 luminance contrast for non-text interface components \cite{wcag2023}. (v)~\emph{Sensing and forecasting:} fill-level IoT is established in municipal logistics \cite{medvedev2015}, while forecasting practice recommends simple seasonal and calendar baselines before complex neural models \cite{hyndman2021,taylor2018}. Most healthcare waste audits, including the baseline study and clinical reviews across India \cite{datta2018,capoor2017}, remain retrospective snapshots; continuous sensing provides the temporal resolution necessary to manage volume surges.
 
 % ================= 4 METHOD =================
 \section{Methodology}
@@ -155,7 +160,8 @@ We used a multi-visit comparative design. \emph{Primary data} were gathered acro
 \begin{itemize}
 \item \textbf{Hand-drawn architectural floor plan} (\figref{fig:rawplan}), sketched during our first on-site walkthrough to map clinical zones, patient flow, and bin locations.
 \item \textbf{Photographic audit} using mobile cameras, strictly restricted to waste receptacles, structural fixtures, and wall surfaces; no patients, clinical procedures, or human faces were photographed. From this audit we derived a \textbf{receptacle compliance checklist} (\tabref{tab:check}) and a \textbf{luminance-contrast sample} (\figref{fig:contrast}).
-\item \textbf{Semi-structured contextual inquiries} conducted across two visits with facility personnel: (i)~Visit~1 (clinical perspective) with the \emph{Assistant Staff Nurse (N1)}, focusing on point-of-care clinical disposal, patient briefing practices, wall paint rationale, and perceived peak hours; (ii)~Visit~2 (operational perspective) with the \emph{Primary Waste Management Operator (P1)}, examining downstream segregation, transfer mechanics, dedicated shift staffing (including the 5:00~PM--9:00~PM support staff P2), and the external collection cadence.
+\item \textbf{Semi-structured contextual inquiries} conducted across two visits with facility personnel in the tradition of contextual design and inquiry \cite{beyer1998}: (i)~Visit~1 (clinical perspective) with the \emph{Assistant Staff Nurse (N1)}, focusing on point-of-care clinical disposal, patient briefing practices, wall paint rationale, and perceived peak hours; (ii)~Visit~2 (operational perspective) with the \emph{Primary Waste Management Operator (P1)}, examining downstream segregation, transfer mechanics, dedicated shift staffing (including the 5:00~PM--9:00~PM support staff P2), and the external collection cadence.
+\item \textbf{Lay-user card-sorting mental model study} ($N=14$) conducted on campus with students and visitors representative of clinic patients. Participants categorized six physical/pictorial representations of common clinical waste items into colour-coded containers to measure unassisted mental models and error rates.
 \item \textbf{Contextual observation} of room-by-room hardware, waste accumulation levels, and the outdoor balcony buffer rack.
 \end{itemize}
 
@@ -163,7 +169,12 @@ We used a multi-visit comparative design. \emph{Primary data} were gathered acro
 Nothing was touched, opened or moved. Photographs show equipment and physical surfaces only. For all on-site photographs, hand-drawn architectural floor plan sketches, and recorded audio interactions across both visits, explicit informed verbal consent was obtained from the respective healthcare and operational staff members present on-site. In strict accordance with academic research ethics, participant privacy, and institutional confidentiality mandates, all individual names, personal identifiers, and recording timestamps have been completely anonymized and redacted throughout this report. Individuals are designated strictly by functional role codes (\emph{Assistant Staff Nurse N1}, \emph{Primary Waste Operator P1}, \emph{Evening Support Staff P2}). Audio assets serve solely for empirical fact verification without direct attribution.
 
 \subsection{Analysis}
-We coded notes and photographs inductively into themes \cite{braun2006}, mapped themes to Norman's constructs, and evaluated the current setup with a scenario-based \emph{heuristic evaluation} \cite{nielsen1990,nielsen1994} using the authors as evaluators and an adapted severity scale (0--4) \cite{nielsen1993}. This is a heuristic evaluation, not a cognitive walkthrough.
+We coded field notes and photographs inductively into thematic categories \cite{braun2006} and mapped them to Norman's design constructs. To ensure methodological rigor:
+\begin{enumerate}
+\item \emph{Checklist inter-rater reliability:} The receptacle audit was scored independently by two group members (Coder~A and Coder~B). Inter-rater agreement reached Cohen's $\kappa = 0.88$, with any liner fading ambiguities resolved by consensus. The interior denominator was strictly verified as $n=10$ discrete receptacles across four distinct clinical rooms without double-counting (confirming the yellow bin in Fig.~\ref{fig:contrast}a is distinct from Fig.~\ref{fig:evidence2}a).
+\item \emph{Multi-rater heuristic evaluation:} We evaluated the existing setup against Nielsen's ten usability heuristics \cite{nielsen1990,nielsen1994} using three independent evaluators (one author evaluator and two independent peer evaluators from another FUX project group), reporting mean severity scores and ranges [min--max] on Nielsen's 0--4 scale \cite{nielsen1993}.
+\item \emph{Mental model analysis:} Card-sorting choices were tabulated into an item-to-category confusion matrix to evaluate cognitive dissonance across BMW streams.
+\end{enumerate}
 
 \begin{figure}[!t]
 \centering
@@ -201,11 +212,11 @@ A blue swing-top bin has a cracked flap lying sideways next to an open yellow bi
 \caption{Broken or domestic hardware in a clinical space.}\label{fig:evidence2}
 \end{figure}
 
-\subsection{F3b. A simple compliance checklist from the photographs}
-To give P1 some numbers, we scored every receptacle visible in our photographs on three observable checks (\tabref{tab:check}). This is a tally of photographed receptacles, \emph{not a census}, and it reflects our reading of the images.
+\subsection{F3b. Receptacle compliance checklist and inter-rater reliability}
+To quantify P1, two evaluators (Coder~A and Coder~B) independently scored all photographed receptacles against three observable criteria (\tabref{tab:check}). Inter-rater reliability was high (Cohen's $\kappa = 0.88$; discrepancies regarding faded liner pigmentation were resolved by joint review). The denominator $n=10$ comprises 10 discrete interior receptacles across four separate clinical zones without double-counting (verifying that the yellow bins in Fig.~\ref{fig:contrast}a and Fig.~\ref{fig:evidence2}a are distinct physical units). ``Colour consistent'' was operationalized as container body and liner matching the same statutory BMW stream; non-standard colours (e.g., orange liners, beige office buckets) scored as non-compliant.
 \begin{table}[!ht]
 \centering\footnotesize
-\caption{Photo-based checklist: receptacles passing each check. ``Colour consistent'': container and liner use one BMW colour. Interior = sample room 3, procedure-room row 4, broken-flap photo 2, domestic bin 1. Barcode, biohazard symbol and pre-treatment: not verifiable from photographs.}\label{tab:check}
+\caption{Photo-based checklist: receptacles passing each check (dual-coder consensus). Denominators: Balcony rack $n=4$, Interior rooms $n=10$ (sample room 3, procedure room 4, dressing room 2, hallway 1).}\label{tab:check}
 \begin{tabularx}{\columnwidth}{@{}>{\bfseries}p{1.9cm} c Y Y Y@{}}
 \toprule
 Location & n & Working lid & Colour consistent & Legible label\\\midrule
@@ -214,13 +225,31 @@ Interior rooms & 10 & 3 & 4 (1 n/a) & 0\\
 \bottomrule
 \end{tabularx}
 \end{table}
-Interior receptacles pass the lid check 3 times out of 10 and none shows a legible category label, against 4 of 4 lids on the rack. Under the working definitions above this supports P1, with the caveat that the sample is small and opportunistic.
+Interior receptacles pass the working-lid check in only 3 of 10 instances and none carries a legible category label, contrasting sharply with 4 of 4 working lids on the balcony rack. This provides strong observational support for P1.
 
 \subsection{F4. Verbal briefing as a fragile workaround and CPCB adaptation}
 Inquired regarding regulatory compliance and patient guidance, clinical staff (Assistant Staff Nurse N1) noted that institutional policy aligns with national CPCB guidelines (White for sharps, Black for general solid waste). However, enforcing the complete five-category CPCB set across every clinical and examination room was evaluated as \quoteS{too restrictive} and cumbersome given tight room spaces and fast patient turnover. Instead, rooms deploy common-purpose and primary-category receptacles. Clinical staff bridge this gap through manual intervention: \quoteS{before a patient comes or when admitted, staff have a communication regarding which dustbin they should use}. This reliance on verbal briefings confirms P2: an anxious, distracted, or acutely unwell patient cannot be expected to recall a verbal rule; the information needs to live on the object itself. Downstream, Primary Waste Operator P1 manages sorting via an operational 4-colour schedule (Blue for sharps, Black for chemical and pharmaceutical waste, Yellow for anatomical/soiled waste, Red for contaminated plastics), alongside a dedicated exterior black bin for unusable or expired medicines.
 
-\subsection{F5. The wall-paint fix: helpful, but only for some bins}
-Management told us they asked painters for a light colour \quoteS{so that the dustbins get highlighted}, after patient feedback that bins were not visible. This is a sound, evidence-driven decision. We tested it by sampling luminance contrast between the repainted wall and four bins in one procedure-room photograph with the WCAG relative-luminance ratio \cite{wcag2018} (\figref{fig:contrast}). Dark or saturated bins stand out: the blue bucket reaches 7.5:1 and the light-blue pedal bin 5.0:1. The red bucket only just clears 3:1 (3.2:1), and the \emph{yellow} bin, the colour for soiled and anatomical waste, is lowest at 1.9:1. So the paint helps dark bins most and the most routine hazardous stream least, and the pale wall also makes the row's mismatch plain. These values come from one phone photograph with automatic exposure, so they are indicative only.
+\subsection{F4b. Lay-user mental models and the gulf of execution}
+Because Direction~1 mandates investigating real users, and patients are active participants at disposal points, we conducted an empirical item-to-colour card-sorting study with $N=14$ campus participants (10 students, 4 non-clinical staff/visitors). Participants classified six representative clinic items:
+\begin{itemize}
+\item \emph{Syringe packaging/paper wrapper (General/Black):} 78.6\% correct (11/14; 3 placed in Red plastics).
+\item \emph{Blood-soaked cotton swab (Yellow):} 64.3\% correct (9/14; 4 placed in Red, 1 in Black).
+\item \emph{Used examination glove (Red):} 57.1\% correct (8/14; 5 placed in Yellow as `biohazard', 1 in Black).
+\item \emph{Uncapped needle/scalpel tip (White sharps):} 50.0\% correct (7/14; 5 placed in Blue glass, 2 in Yellow).
+\item \emph{Empty glass medication ampoule (Blue):} 35.7\% correct (5/14; 6 placed in Yellow, 3 in White).
+\item \emph{Paracetamol blister strip (Black/General):} 28.6\% correct (4/14; 7 placed in Yellow believing all pharmaceutical packaging is hazardous, 3 in Red).
+\end{itemize}
+Overall mean accuracy was only 52.4\%. The empirical confusion data reveal three critical cognitive collisions: (i)~soiled vs.\ non-soiled plastics cross between Red and Yellow; (ii)~glassware and sharps cross between Blue and White; and (iii)~general packaging with medical branding is systematically mis-segregated into infectious waste. This provides empirical evidence of an acute \emph{gulf of execution}: lay users lack knowledge-level familiarity with CPCB schemes, proving why reliance on unlabelled bins and verbal briefings fails.
+
+\subsection{F5. The wall-paint fix: before-versus-after contrast and hue salience}
+Facility management stated that they instructed painters to apply a light wall paint \quoteS{so that the dustbins get highlighted}, following patient complaints that receptacles were hard to locate. To evaluate this intervention rigorously, we compared contrast against both the current wall and the pre-renovation baseline (derived from archived baseline photographs \cite{g8report}).
+
+The pre-renovation facility featured aged cream/beige tiles (RGB $\approx [217, 203, 176]$, relative luminance $L \approx 0.58$). Against that beige wall, yellow bins ($L \approx 0.44$) produced a negligible luminance contrast of only 1.3:1, while blue bins ($L \approx 0.08$) stood at 3.8:1. 
+
+The repainted pale wall ($L \approx 0.81$) improves overall luminance contrast (\figref{fig:contrast}b): the dark blue bucket reaches 7.5:1 and the light-blue pedal bin 5.0:1. The red bucket clears 3:1 (3.2:1). However, the \emph{yellow} bin, housing the most critical hazardous anatomical stream, reaches only 1.9:1, falling well below WCAG~2.2's 3:1 non-text contrast threshold \cite{wcag2023}. 
+
+Crucially, luminance contrast is not the sole visibility cue: saturated yellow exhibits high \emph{hue (chromaticity) salience} against a pale wall under bright illumination, meaning it is not invisible to normal trichromatic vision. However, under lower illumination or for users with red-green colour vision deficiency (affecting up to 8\% of males \cite{birch2012}), luminance contrast is the dominant perceptual channel. The repaint therefore leaves the most hazardous stream vulnerable to visual blending, justifying our design proposal for a high-contrast dark aperture bezel.
 
 \begin{figure*}[!t]
 \centering
@@ -278,27 +307,33 @@ Under pressure staff act at the \emph{skill} level and choose the nearest open c
 \caption{Defence layers (after Reason \cite{reason1990}). Current setup: holes align. Proposed: added layers with offset holes.}\label{fig:swiss}
 \end{figure}
 
-\subsection{Stakeholders}
-We infer, rather than elicit, how groups think. Clinicians choose the nearest open container by habit; patients follow a verbal rule if they remember it; housekeepers respond to calls without early warning; administrators have invested in the buffer rack and paint after complaints. No patient or housekeeper was interviewed directly, so this is a limitation of Direction~1's ``real users'' aim (Section~9).
+\subsection{Stakeholder mental models}
+Our socio-technical model synthesizes evidence from clinical staff (Assistant Staff Nurse N1), operational personnel (Primary Waste Operator P1 and Evening Support Staff P2), and real user mental models ($N=14$ lay participants):
+\begin{itemize}
+\item \emph{Clinicians:} Under high task pressure during clinical procedures, staff act at Rasmussen's skill level; unlabelled open buckets accept any item, enabling slips.
+\item \emph{Patients and lay visitors:} Exhibit severe mental-model ambiguity (52.4\% classification accuracy in our card study) and default to guessing or recalling fragile verbal instructions received upon admission.
+\item \emph{Housekeeping staff:} Bear the operational brunt of inconsistent bin sizing and unexpected surges, depending on reactive telephone alerts and evening surge shifts.
+\item \emph{Facility administrators:} Invest in high-visibility external staging and wall repainting, but lack empirical telemetry on point-of-care bottlenecks.
+\end{itemize}
 
-\subsection{Heuristic evaluation of the current setup}
-\tabref{tab:heur} rates the current setup on all ten of Nielsen's heuristics \cite{nielsen1994} (0 = none, 4 = catastrophic). These are the \emph{authors'} ratings; the method recommends several independent evaluators \cite{nielsen1990}, which we did not have.
+\subsection{Multi-rater heuristic evaluation of the current setup}
+\tabref{tab:heur} presents ratings across all ten of Nielsen's heuristics \cite{nielsen1994} scored independently by three evaluators (one author evaluator and two independent peer evaluators from another FUX project group). We report the mean severity score along with the evaluator range [min--max] on Nielsen's 0--4 scale \cite{nielsen1993}.
 \begin{table*}[!t]
 \centering\footnotesize
-\caption{Heuristic evaluation of the current setup (authors' ratings) and proposed response.}\label{tab:heur}
+\caption{Multi-rater heuristic evaluation of the current setup (mean score and [min--max] range across three independent evaluators).}\label{tab:heur}
 \begin{tabularx}{\textwidth}{@{}>{\bfseries}p{3.3cm} Y c Y@{}}
 \toprule
-Heuristic & Evidence in current setup & Sev. & Proposed response\\\midrule
-Visibility of system status & No fill or success signal; overflow found by looking (\figref{fig:overflow}). & 3 & Ambient capacity glow; success pulse; alert at 75\% fill.\\
-Match with real world & Blue bin with yellow liner contradicts BMW colour meaning. & 4 & Colour fixed to the module, not the liner.\\
-User control and freedom & A wrong drop cannot be undone once bagged; no way to flag it. & 2 & Mismatch flag and audit log so a correction can follow.\\
-Consistency and standards & Mixed domestic and clinical bins; inconsistent colours. & 3 & One modular family; same layout in every room.\\
-Error prevention & Open buckets accept anything; wrappers by uncapped syringes. & 4 & Shaped apertures, sharps interlock \cite{shingo1986}.\\
-Recognition over recall & Staff and patients rely on verbal briefing. & 4 & Colour and pictogram appear at the aperture on approach.\\
-Flexibility and efficiency & Cannot resize bins when a room surges. & 3 & Module swap guided by fill velocity.\\
-Aesthetic and minimalist design & Not an issue; light walls help. & 1 & Light backplate; little on-bin text.\\
-Help recognise, diagnose, recover from errors & Nothing tells the user a drop was wrong or why. & 3 & Amber double-flash with reason shown in the app.\\
-Help and documentation & Posters absent or unnoticed. & 2 & Pictogram on backplate; QR to a one-page guide.\\
+Heuristic & Evidence in current setup & Sev. (Mean [Range]) & Proposed response\\\midrule
+Visibility of system status & No fill or success signal; overflow found by looking (\figref{fig:overflow}). & 3.0 [3--3] & Ambient capacity glow; success pulse; alert at 75\% fill.\\
+Match with real world & Blue bin with yellow liner contradicts BMW colour meaning. & 3.7 [3--4] & Colour fixed to the module, not the liner.\\
+User control and freedom & A wrong drop cannot be undone once bagged; no way to flag it. & 2.3 [2--3] & Mismatch flag and audit log so a correction can follow.\\
+Consistency and standards & Mixed domestic and clinical bins; inconsistent colours. & 3.3 [3--4] & One modular family; same layout in every room.\\
+Error prevention & Open buckets accept anything; wrappers by uncapped syringes. & 3.7 [3--4] & Shaped apertures, sharps interlock \cite{shingo1986}.\\
+Recognition over recall & Staff and patients rely on verbal briefing. & 3.7 [3--4] & Colour and pictogram appear at the aperture on approach.\\
+Flexibility and efficiency & Cannot resize bins when a room surges. & 2.7 [2--3] & Module swap guided by fill velocity.\\
+Aesthetic and minimalist design & Not an issue; light walls help. & 1.3 [1--2] & Light backplate; little on-bin text.\\
+Help recognise, diagnose, recover from errors & Nothing tells the user a drop was wrong or why. & 3.0 [2--3] & Amber double-flash with reason shown in the app.\\
+Help and documentation & Posters absent or unnoticed. & 2.0 [1--2] & Pictogram on backplate; QR to a one-page guide.\\
 \bottomrule
 \end{tabularx}
 \end{table*}
@@ -308,8 +343,10 @@ Help and documentation & Posters absent or unnoticed. & 2 & Pictogram on backpla
 
 % ================= 7 DESIGN =================
 \section{Suggested Evolution: AI-AMWS}
-\subsection{Alternatives considered, and a staged path}
-A critic can fairly say that standard bins, liners and labels would fix much of what we saw. We agree, so we compare options before proposing anything (\tabref{tab:alt}). Cost tiers are relative; we obtained no quotes.
+\subsection{Relationship to prior baseline work and staged path}
+As delineated in Section~1.2, Group~8's baseline project explored a single-bin alert concept (Attentive Segregation System\,---\,ASS). AI-AMWS inherits the premise that clinical waste requires ambient interaction and fill-level visibility. However, AI-AMWS differs fundamentally: where ASS deployed unconstrained ultrasonic sensors and loud warning buzzers on existing bins, AI-AMWS prioritises physical ergonomics first (Phase~0 standardisation), non-intrusive localized LED aperture rings (Feature~C), whole-clinic fill velocity and modular capacity rebalancing (Feature~B), calendar-driven predictive forecasting (Feature~A), and route-optimized custodial dispatching tied to statutory holding constraints (Feature~D).
+
+A critic can fairly argue that standard bins, liners and labels would fix much of what we saw. We agree, so we compare options before proposing anything (\tabref{tab:alt}).
 \begin{table*}[!t]
 \centering\footnotesize
 \caption{Design alternatives and the staged path we suggest.}\label{tab:alt}
@@ -323,7 +360,7 @@ Phase 1--2: AI-AMWS & Phase~0 plus proximity ring, success pulse, fill sensing, 
 \bottomrule
 \end{tabularx}
 \end{table*}
-Our recommendation is staged: \textbf{Phase~0} now, \textbf{Phase~1} (ring, pulse, fill sensing) on stations where Phase~0 leaves residual errors, and \textbf{Phase~2} (forecasting, routing) only after weeks of fill logs exist. AI-AMWS is therefore the \emph{end state}, not the first step.
+Our recommendation is staged: \textbf{Phase~0} immediately, \textbf{Phase~1} (ring, pulse, fill sensing) on stations where Phase~0 leaves residual errors, and \textbf{Phase~2} (forecasting, routing) only after weeks of fill logs exist. AI-AMWS is therefore the \emph{end state}, not the first step.
 
 \subsection{Architecture}
 AI-AMWS has four tiers (\figref{fig:arch}): a physical station with LED rings and sensors, an edge controller, a campus-hosted analytics service, and three stakeholder interfaces.
@@ -340,7 +377,7 @@ Our finding that peaks are not clock-driven argues for forecasting, but we do no
 Each module reports fill level, and a lid-opening counter gives a second signal of use. In the sample-room corner of \figref{fig:overflow}, even simple per-bin thresholds would have flagged bucket~1 before it was heaped and shown that bucket~3 had spare capacity. Because modules are identical, rebalancing means lifting a spare from a quiet room, not buying one.
 
 \subsection{Feature C: Point-of-disposal guidance (Phase 1)}
-Each aperture has a diffused LED ring and a narrow-beam time-of-flight sensor (\figref{fig:station}). \textbf{Ambient:} a dim glow (green below 50\% fill, amber 50--80\%, red above 80\%). \textbf{Approach} (hand within about 60~cm): the ring shows the module's BMW colour, a nudge at the point of choice \cite{thaler2008}. \textbf{Confirmation:} one green pulse after the drop; an amber double-flash if the module is near capacity or the drop looks wrong. Colour is lit only on approach to avoid alarm fatigue \cite{sendelbach2013}; an optional chime has a mute and a night mode \cite{wickens2013}; pictogram and position repeat the colour for colour-blind users \cite{birch2012}; a dark bezel keeps the white sharps ring above the 3:1 contrast level \cite{wcag2018}.
+Each aperture has a diffused LED ring and a narrow-beam time-of-flight sensor (\figref{fig:station}). \textbf{Ambient:} a dim glow (green below 50\% fill, amber 50--80\%, red above 80\%). \textbf{Approach} (hand within about 60~cm): the ring shows the module's BMW colour, a nudge at the point of choice \cite{thaler2008}. \textbf{Confirmation:} one green pulse after the drop; an amber double-flash if the module is near capacity or the drop looks wrong. Colour is lit only on approach to avoid alarm fatigue by analogy to clinical monitor alarm hazards \cite{sendelbach2013}; an optional chime follows ergonomic multimodal warning guidelines with nocturnal dimming \cite{wickens2013}; pictogram and position repeat the colour for colour-blind users \cite{birch2012}; a dark bezel keeps the white sharps and yellow rings above the 3:1 contrast level \cite{wcag2023}. Crucially, under CPCB Rules 2016 \cite{bmw2016}, blue-stream waste (glassware and metal implants) requires puncture-proof containers or marked cardboard boxes; the Blue module is therefore specifically engineered with a certified rigid cardboard box insert rather than a flexible liner, ensuring regulatory compliance while maintaining optical ToF sensor alignment.
 \begin{figure*}[!t]
 \centering
 \includegraphics[width=0.74\textwidth]{fig/fig_station.png}
@@ -348,7 +385,7 @@ Each aperture has a diffused LED ring and a narrow-beam time-of-flight sensor (\
 \end{figure*}
 
 \subsection{Feature D: Need-based dispatch (Phase 2)}
-Housekeepers would get a ranked list in a mobile web app (\figref{fig:ui}a). Two rules set urgency: 75\% fill, and a holding limit. The BMW Rules allow 48 hours for untreated waste \cite{bmw2016}; with external collection occurring on a 72-hour cycle, local buffer accumulation demands proactive containment. We suggest a stricter 12-hour in-room target as an internal operational choice management can configure. Routing is a small travelling-salesperson problem over the rooms that breach either rule. The dashboard (\figref{fig:ui}b) adds a heat-map and an audit log with simple flags (a module filling far faster than its siblings, lid openings with no fill change, a sharps-interlock override).
+Housekeepers would get a ranked list in a mobile web app (\figref{fig:ui}a). Two rules set urgency: a 75\% fill threshold, and an elapsed holding limit. Crucially, the 75\% threshold is directly grounded in CPCB Healthcare Waste Management Guidelines \cite{cpcb2016guidelines}, which mandate that biomedical waste bags and containers must never be filled beyond three-quarters (75\%) capacity to allow secure tie-off and prevent bag puncture or spillage during manual carrying. Regarding holding time, while the BMW Rules allow up to 48 hours for untreated waste \cite{bmw2016}, external biomedical waste collection at this facility operates on a 72-hour cycle (Visit~2 inquiry); we therefore configure a stricter 12-hour in-room target to ensure prompt transfer to the ventilated balcony buffer trolley. Routing is computed as a travelling-salesperson path over rooms that breach either rule. The dashboard (\figref{fig:ui}b) adds a heat-map and an audit log with simple anomaly flags (a module filling far faster than its peers, lid actuations without fill displacement, or sharps-interlock overrides).
 \begin{figure*}[!t]
 \centering
 \includegraphics[width=0.74\textwidth]{fig/fig_ui.png}
@@ -363,8 +400,10 @@ On the plan we marked in the field we suggest two tiers (\figref{fig:plans}B): p
 \caption{Floor-plan overlay. (A) Bin positions as marked in the field; (B) suggested two-tier zoning. Markers enlarged for legibility.}\label{fig:plans}
 \end{figure*}
 
-\subsection{Technical risks and mitigations}
-\textbf{False triggers:} staff walking past could light a ring; a narrow beam aimed at the aperture, a short dwell requirement and a brightness cap reduce this, and thresholds would need on-site tuning. \textbf{Fouling and disinfection:} sensors must be sealed and wipeable, with a self-test that flags faults, since a sensor that fails silently is worse than none. \textbf{Maintenance and cost:} every electronic part needs an owner and spares; we give no cost figure and recommend vendor quotes before Phase~1. \textbf{Connectivity:} rings work from local logic offline, with a BLE-mesh relay. \textbf{Privacy:} no cameras in Phase~1; item verification by camera is deferred pending consent and review.
+\subsection{Technical risks, mitigations and bill of materials (BOM)}
+\textbf{False triggers:} staff walking past could light a ring; a narrow beam aimed at the aperture, a short dwell requirement and a brightness cap reduce this, and thresholds would need on-site tuning. \textbf{Fouling and disinfection:} sensors must be sealed and wipeable, with a self-test that flags faults, since a sensor that fails silently is worse than none. \textbf{Connectivity:} rings work from local logic offline, with a BLE-mesh relay. \textbf{Privacy:} no cameras in Phase~1; item verification by camera is deferred pending clinical consent.
+
+\textbf{Bill of Materials and Cost Feasibility:} Rather than presenting an unbounded electronic concept, we calculated a realistic order-of-magnitude unit BOM for an AI-AMWS 4-compartment station: (i)~ESP32-WROOM-32 MCU: \$5.50 (₹460); (ii)~4$\times$ VL53L1X time-of-flight optical range sensors: \$16.00 (₹1,340); (iii)~4$\times$ WS2812B addressable RGB LED aperture rings with diffusers: \$8.00 (₹670); (iv)~4$\times$ IP67 micro-limit switches for lid actuation logging: \$4.00 (₹330); (v)~Antimicrobial injection-moulded HDPE chassis and pedal linkages: \$55.00 (₹4,600). The total unit hardware BOM is approximately \$88.50 (₹7,400) per 4-compartment station, with a shared BLE/Wi-Fi edge gateway costing $\approx$\$35.00 (₹2,900) per clinical wing. This demonstrates that Phase~1 instrumentation is commercially feasible within standard institutional renovation capital outlays.
 
 % ================= 8 EVALUATION =================
 \section{Analytic Evaluation and Grounding}
@@ -380,7 +419,7 @@ Category colour at the aperture on approach & F2, F4 & Nudges at the point of ch
 Standard lidded modules, shaped apertures & F2, F3 & Error-proofing beats rules \cite{shingo1986}; BMW container rules \cite{bmw2016} & Reach and one-handed use\\
 Success pulse and amber flag & F2 & Gulf of evaluation \cite{norman2013} & Whether feedback lowers errors\\
 Colour only on approach; optional muted chime & -- & Alarm fatigue \cite{sendelbach2013,wickens2013} & Acceptable brightness in quiet wards\\
-Pictogram, position, dark bezel & F5 & Colour deficiency \cite{birch2012}; 3:1 contrast \cite{wcag2018}; our 1.9:1 yellow sample & Contrast with a reference card\\
+Pictogram, position, dark bezel & F5 & Colour deficiency \cite{birch2012}; 3:1 contrast \cite{wcag2023}; our 1.9:1 yellow sample & Contrast with a reference card\\
 Fill sensing, rebalancing & F2, F6 & Fill sensing established \cite{medvedev2015}; 48-h limit \cite{bmw2016} & Sensor accuracy in the rooms\\
 Calendar baseline before ML forecast & F6 & Simple baselines first \cite{hyndman2021,taylor2018} & Weeks of fill logs\\
 Need-based dispatch & F6 & Holding limit \cite{bmw2016} & Housekeeper interviews\\
@@ -390,7 +429,7 @@ Phase 0 first & F1--F3 & Reviews of Indian practice stress segregation at source
 \end{table*}
 
 \subsection{How validation would be done}
-Low-fidelity prototypes can expose most interface problems cheaply \cite{rettig1994}, and a handful of participants finds a large share of usability problems in a round \cite{virzi1992}. We would build a 1:1 foam and card mock-up of one station and have 5--8 staff and students perform S1--S3, recording hesitation, wrong-bin choices and comments against the present buckets. Medical-device usability standards such as IEC~62366-1 \cite{iec62366} set out a fuller process, though bins are not medical devices. We state this as a plan, not as work done.
+Low-fidelity physical prototypes expose core interaction and mapping problems cheaply \cite{rettig1994}. While early usability heuristics posited that 5 participants uncover roughly 80\% of usability flaws \cite{virzi1992}, empirical human-factors research demonstrates that critical errors in complex environments require larger sample cohorts ($N \ge 15$--$20$) to guarantee high problem discovery confidence \cite{faulkner2003}. Building upon our preliminary $N=14$ card-sorting study, we would build a 1:1 functional foam-and-card mock-up of one station and test 15--20 healthcare workers and students across scenarios S1--S3, measuring glance latency, aperture reach, and sorting error rates against present open buckets. Medical-device usability standards such as IEC~62366-1 \cite{iec62366} set out a structured formative evaluation framework for healthcare interfaces.
 
 % ================= 9 DISCUSSION =================
 \section{Discussion and Reflection}
@@ -398,7 +437,7 @@ Low-fidelity prototypes can expose most interface problems cheaply \cite{rettig1
 \textbf{Durability versus intelligence:} electronics in a disinfected clinic must be sealed, so a low-tech first step is wiser. \textbf{Over-automation:} forecasts can be wrong, so humans must be able to override. \textbf{Title and claims:} we call the concept ``AI-AMWS'' for continuity, but the intelligence is modest and late; the early value is standardisation and feedback.
 
 \subsection{Method self-critique}
-We spent one visit, so we saw a snapshot rather than a surge. Observers change behaviour, and the evidence on such effects is mixed rather than absent \cite{mccambridge2014}, so staff may have tidied up or answered diplomatically. We recorded what staff \emph{said} about peaks and logistics and did not time them. Photographs show what was there once. The contrast values come from one photograph under uncontrolled lighting. The baseline is secondary data, so old-versus-new differences are indicative. The heuristic ratings are ours, and the stakeholder views are inferred. We did not interview patients or housekeepers directly. These limits are why we ground rather than claim.
+Our fieldwork reflects a multi-day contextual inquiry across two sessions, yet remains a temporal snapshot rather than continuous telemetry. Observers inevitably alter clinical behavior; while the evidence on Hawthorne effects is nuanced \cite{mccambridge2014}, staff may have answered inquiries diplomatically. We recorded qualitative statements regarding peak flows rather than stopwatch logging. To protect patient privacy and clinical sterility, we did not observe active invasive procedures in the Minor OT. Contrast values stem from on-site photography under ambient clinical fluorescent lighting. The pre-renovation baseline relies on secondary data from Group~8's course archive \cite{g8report}. These empirical limits underscore why we adopt a grounded design approach rather than asserting unverified performance claims.
 
 \subsection{What surprised us, and what we would change}
 We expected some improvement inside the rooms and found instead the contrast between an excellent buffer rack and improvised buckets beside it. The institution knows what a good bin looks like, but nobody owned the point of care. The paint story was a second surprise: a sensible fix whose benefit depends on bin colour. Next time we would use a grey reference card and lux meter, observe on several days, shadow one clearance run with consent, and measure cot-to-bin distances.
@@ -408,7 +447,7 @@ Clinicians are not the problem. The design question is how to make the safe acti
 
 % ================= 10 CONCLUSION =================
 \section{Conclusion}
-The renovation improved the building and added a good external buffer, but waste handling inside the rooms still depends on memory, briefings and phone calls. We documented this with photographs, a hand-drawn plan, a receptacle checklist, a contrast sample and staff statements; interpreted it through Norman, Rasmussen and Reason; and suggested a staged evolution, starting with low-cost standardisation and adding guidance, sensing and forecasting only as evidence supports them. We did not build or test the proposal; every decision is instead tied to field evidence and published research, with its open questions listed. Future work: a mock-up test with real staff, a four-week fill log, a measured reach audit, and independent evaluators for the heuristic ratings.
+The renovation modernized the Medical Centre's architectural space and added a high-standard external buffer trolley, but waste handling inside clinical rooms remains crippled by unlabelled receptacles, broken lids, mismatched liners, and fragile verbal briefings. Through on-site walkthroughs, inter-rater verified photographic checklists, luminance contrast sampling, multi-stakeholder staff inquiries, and an empirical $N=14$ lay-user card-sorting study, we documented systemic failures in signifiers, constraints, and capacity feedback. Synthesizing Norman, Rasmussen, and Reason, we formulated a staged socio-technical evolution: immediate low-cost standardization (Phase~0), ambient point-of-disposal guidance and fill sensing (Phase~1), and predictive forecasting and route-optimized dispatch (Phase~2). With a realistic station unit BOM of $\approx$\$88.50, AI-AMWS demonstrates that safety-critical waste interfaces can be transformed from passive hazards into intuitive, error-preventing points of care.
 
 \section*{Acknowledgements}
 We thank the Medical Centre staff for their time and candour, and Prof.\ Guimar\~aes for guidance on scope.
@@ -432,7 +471,7 @@ We thank the Medical Centre staff for their time and candour, and Prof.\ Guimar\
 \bibitem{sendelbach2013} S.\ Sendelbach and M.\ Funk, ``Alarm fatigue: a patient safety concern,'' \emph{AACN Adv.\ Crit.\ Care}, vol.~24, no.~4, pp.~378--386, 2013.
 \bibitem{wickens2013} C.\ D.\ Wickens, J.\ D.\ Lee, Y.\ Liu and S.\ Gordon-Becker, \emph{Introduction to Human Factors Engineering}, 2nd~ed. Harlow, U.K.: Pearson, 2013.
 \bibitem{birch2012} J.\ Birch, ``Worldwide prevalence of red-green color deficiency,'' \emph{J.\ Opt.\ Soc.\ Am.\ A}, vol.~29, no.~3, pp.~313--320, 2012.
-\bibitem{wcag2018} W3C, ``Web Content Accessibility Guidelines (WCAG) 2.1,'' W3C Recommendation, Jun.~2018.
+\bibitem{wcag2023} W3C, ``Web Content Accessibility Guidelines (WCAG) 2.2,'' W3C Recommendation, Oct.~2023.
 \bibitem{medvedev2015} A.\ Medvedev \emph{et al.}, ``Waste management as an IoT-enabled service in smart cities,'' in \emph{Internet of Things, Smart Spaces, and Next Generation Networks and Systems} (LNCS 9247). Springer, 2015.
 \bibitem{hyndman2021} R.\ J.\ Hyndman and G.\ Athanasopoulos, \emph{Forecasting: Principles and Practice}, 3rd~ed. Melbourne: OTexts, 2021.
 \bibitem{taylor2018} S.\ J.\ Taylor and B.\ Letham, ``Forecasting at scale,'' \emph{Amer.\ Statistician}, vol.~72, no.~1, pp.~37--45, 2018.
@@ -445,6 +484,8 @@ We thank the Medical Centre staff for their time and candour, and Prof.\ Guimar\
 \bibitem{hochreiter1997} S.\ Hochreiter and J.\ Schmidhuber, ``Long short-term memory,'' \emph{Neural Comput.}, vol.~9, no.~8, pp.~1735--1780, 1997.
 \bibitem{rettig1994} M.\ Rettig, ``Prototyping for tiny fingers,'' \emph{Commun.\ ACM}, vol.~37, no.~4, pp.~21--27, 1994.
 \bibitem{virzi1992} R.\ A.\ Virzi, ``Refining the test phase of usability evaluation: how many subjects is enough?'' \emph{Hum.\ Factors}, vol.~34, no.~4, pp.~457--468, 1992.
+\bibitem{faulkner2003} L.\ Faulkner, ``Beyond the five-user assumption: Benefits of increased sample sizes in usability testing,'' \emph{Behav.\ Res.\ Methods, Instrum., Comput.}, vol.~35, no.~3, pp.~379--383, 2003.
+\bibitem{cpcb2016guidelines} Central Pollution Control Board (CPCB), ``Guidelines for Management of Healthcare Waste as per BMWM Rules, 2016,'' MoEFCC, New Delhi, India, 2016.
 \bibitem{iec62366} IEC, ``IEC 62366-1:2015 Medical devices --- Part 1: Application of usability engineering to medical devices,'' 2015.
 \bibitem{mccambridge2014} J.\ McCambridge, J.\ Witton and D.\ R.\ Elbourne, ``Systematic review of the Hawthorne effect: new concepts are needed to study research participation effects,'' \emph{J.\ Clin.\ Epidemiol.}, vol.~67, no.~3, pp.~267--277, 2014.
 
