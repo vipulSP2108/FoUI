@@ -10,3 +10,7 @@ Thumbs.db
 *.tmp
 *.bak
 extracted_g8_text.txt
+
+# Dump folder
+dump/
+
