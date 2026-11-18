@@ -44,7 +44,7 @@ Foundations of User Experience (2026–2027)
 
 * **Case A: Professor approves comparative approach as-is:**
   * Immediately initiate field observation sessions at the renovated Medical Centre.
-  * Populate the comparative matrix ([06_comparative_matrix_old_vs_relocated_vs_ai_amws.md](file:///Users/aai/Desktop/FoUI/project_context_db/06_comparative_matrix_old_vs_relocated_vs_ai_amws.md)).
+  * Populate the comparative matrix ([06_comparative_matrix_pre_vs_post_renovation_vs_ai_amws.md](file:///Users/aai/Desktop/FoUI/project_context_db/06_comparative_matrix_pre_vs_post_renovation_vs_ai_amws.md)).
   * Proceed with the 10-page LaTeX report draft following the blueprint in [09_ten_page_latex_report_blueprint_and_page_budget.md](file:///Users/aai/Desktop/FoUI/project_context_db/09_ten_page_latex_report_blueprint_and_page_budget.md).
 * **Case B: Professor suggests heavier emphasis on physical/interactive prototyping (Direction b):**
   * Allocate 3.5 pages of the report to the AI-AMWS interactive LED visual guidance and custodial mobile interface walkthrough.

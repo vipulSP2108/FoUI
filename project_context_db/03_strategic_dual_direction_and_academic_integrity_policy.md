@@ -48,6 +48,6 @@ To strictly fulfill the **Originality and Autonomous Reflection** assessment cri
 
 ## 3. Academic Framing of the Comparative Study
 By structuring the project as a comparative study of the **renovated facility**, Group M provides genuine novel academic value:
-* Facility relocations in healthcare environments routinely cause spatial disorientation, workflow disruption, and mental model mismatch.
+* Facility renovations in healthcare environments routinely cause spatial disorientation, workflow disruption, and mental model mismatch.
 * Comparing the old facility (cramped, static, low-contrast) against the renovated facility (larger, redesigned zoning, updated fixtures) provides a rich, naturalistic human factors case study.
 

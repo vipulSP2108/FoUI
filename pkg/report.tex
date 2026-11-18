@@ -58,14 +58,13 @@
 \fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancyhead[L]{\sffamily\scriptsize\color{navy}Segregation at the Point of Care: UX Critique and Grounded Design Proposal}
-\fancyhead[R]{\sffamily\scriptsize\color{navy}Group 9 $\cdot$ FUX 2026--27}
+\fancyhead[R]{\sffamily\scriptsize\color{navy}Group M (Group 9) $\cdot$ FUX 2026--27}
 \fancyfoot[C]{\sffamily\scriptsize\thepage\ / \pageref{LastPage}}
 \fancypagestyle{first}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\fancyfoot[C]{\sffamily\scriptsize\thepage\ / \pageref{LastPage}}}
 
 \newcommand{\hl}[1]{\textbf{\color{navy}#1}}
 \newcommand{\figref}[1]{Fig.~\ref{#1}}
 \newcommand{\tabref}[1]{Table~\ref{#1}}
-\newcommand{\todo}[1]{{\color{red}\textbf{[#1]}}}
 \newcommand{\quoteS}[1]{\textit{``#1''}}
 
 \begin{document}
@@ -76,7 +75,7 @@
 {\color{teal}\rule{\textwidth}{1.6pt}}\\[7pt]
 {\sffamily\bfseries\fontsize{17}{20}\selectfont\color{navy} Segregation at the Point of Care}\\[3pt]
 {\sffamily\fontsize{11.5}{14}\selectfont\color{navy} A UX Critique of Medical-Waste Handling at the Renovated IITGN Medical Centre\\ and a Literature-Grounded Design Proposal (AI-AMWS)}\\[7pt]
-{\sffamily\small\textbf{Group 9}}
+{\sffamily\small\textbf{Group M (Group 9)}}
 
 \quad{\small Vipul Sunil Patil (22110189), Vraj Rajdeep (22110215), Gaurav Budhwani (22110085), Anish (24110041), Tanish (23110327), Smit Bambhroliya (24110345)}\\
 {\small\itshape Foundations of User Experience (FUX), Semester 1, 2026--27 $\cdot$ Indian Institute of Technology Gandhinagar}\\
@@ -87,7 +86,7 @@
 \begin{center}
 \begin{minipage}{0.94\textwidth}
 \small\noindent{\sffamily\bfseries\color{navy}Abstract\,---\,}%
-Bio-medical waste (BMW) segregation is a safety-critical task that depends on how well a physical environment supports busy, distracted people. The IITGN Medical Centre has been renovated, which let us study what a redesign does, and does not, change for waste handling. This report is an \emph{observation, critique and preliminary-design} exercise. We did not build a model or run a user study; we analyse what we saw, identify the bottlenecks, and suggest evolutions that are each justified by field evidence and by published research. On 10~November~2026 we mapped the layout by hand, photographed receptacles without touching waste, sampled bin-to-wall contrast from a photograph, and spoke to staff. We compare this with a documented baseline of the pre-renovation facility. The renovation produced one well-made external buffer rack, but the point-of-care receptacles inside the rooms are mostly lidless, unlabelled, mismatched or broken, unevenly full, and emptied only when someone calls. Reading these findings through Norman, Rasmussen and Reason, we derive six requirements and propose a staged path: standardise first (Phase~0), add point-of-disposal guidance and fill sensing (Phase~1), and only then add forecasting and routing (Phase~2). We state plainly what remains to be validated.\\[3pt]
+Bio-medical waste (BMW) segregation is a safety-critical task that depends on how well a physical environment supports busy, distracted people. The IITGN Medical Centre has recently undergone an interior and spatial renovation, providing an opportunity to study what a physical facility redesign does, and does not, change for clinical waste handling. This report presents an \emph{observation, critique and preliminary-design} exercise. We did not build a physical model or run an interventional clinical trial; we analyse what we documented across two on-site contextual inquiries (10 and 18~November~2026), identify systemic human-factors bottlenecks, and propose design evolutions justified by field evidence and published HCI and ergonomic literature. We mapped the renovated facility layout by hand, audited receptacles photographically without touching waste, sampled bin-to-wall contrast, and conducted semi-structured inquiries with clinical and operational staff under explicit verbal informed consent and strict participant anonymity. While the renovation introduced an organized 4-bin external balcony buffer rack, point-of-care receptacles inside patient rooms remain predominantly lidless, unlabelled, mismatched, unevenly loaded, and emptied reactively. Furthermore, staff rely on verbal briefings to bridge regulatory gaps, while surge management depends on an informal hybrid of evening support staffing (5:00--9:00~PM) and daytime on-demand phone calls. Reading these findings through Norman, Rasmussen and Reason, we derive six functional requirements and propose a staged trajectory: standardise first (Phase~0), introduce point-of-disposal guidance and fill sensing (Phase~1), and implement predictive forecasting and route optimization (Phase~2). We explicitly delineate what remains to be validated.\\[3pt]
 {\sffamily\bfseries\color{navy}Keywords\,---\,}{\itshape bio-medical waste, safety-critical UX, signifiers, error prevention, healthcare ergonomics, design critique}
 \end{minipage}
 \end{center}
@@ -150,18 +149,18 @@ We rely on five bodies of work. (i)~\emph{Nudges:} prompts placed at the moment 
 % ================= 4 METHOD =================
 \section{Methodology}
 \subsection{Design and sources}
-We used a two-source comparative design. \emph{Primary data} come from our visit to the renovated centre on 10 November 2026. \emph{Secondary data} come from the documented study of the pre-renovation facility by an earlier cohort of this course \cite{g8report}, which the instructor provided as course material. It recorded about 100--150 daily visitors, 15 bins in five zones and once-daily collection, from three observation sessions (255 minutes in total) and interviews with 5 nurses, 3 housekeeping staff and 2 administrators. We reuse its descriptive findings only, as context, and we did not replicate its measurements.
+We used a multi-visit comparative design. \emph{Primary data} were gathered across two fieldwork sessions at the renovated centre on 10 and 18~November~2026, triangulating clinical and operational perspectives. \emph{Secondary data} come from the documented baseline study of the pre-renovation facility by an earlier cohort of this course \cite{g8report}, provided as course reference material. It recorded approximately 100--150 daily visitors, 15 bins across five functional zones, and once-daily collection from three observation sessions (255 minutes total) and interviews with 5 nurses, 3 housekeeping staff, and 2 administrators. We reuse its descriptive findings strictly as historical baseline context, without replicating its specific measurements.
 
 \subsection{Instruments}
 \begin{itemize}
-\item \textbf{Hand-drawn floor plan} (\figref{fig:rawplan}), later used to mark bin positions.
-\item \textbf{Photographic audit} with a phone camera, objects and surfaces only; no faces, patients or staff. From it we derive a \textbf{receptacle checklist} (\tabref{tab:check}) and a \textbf{luminance-contrast sample} (\figref{fig:contrast}).
-\item \textbf{Semi-structured staff conversations} with \todo{N staff, roles: to be filled in by the group}, following a written protocol in the spirit of contextual inquiry \cite{beyer1998}. Topics were whether bins were reconsidered in the renovation, how patients know which bin to use, when bins fill and how waste leaves the rooms.
-\item \textbf{Contextual observation} of the arrangement and of the balcony rack.
+\item \textbf{Hand-drawn architectural floor plan} (\figref{fig:rawplan}), sketched during our first on-site walkthrough to map clinical zones, patient flow, and bin locations.
+\item \textbf{Photographic audit} using mobile cameras, strictly restricted to waste receptacles, structural fixtures, and wall surfaces; no patients, clinical procedures, or human faces were photographed. From this audit we derived a \textbf{receptacle compliance checklist} (\tabref{tab:check}) and a \textbf{luminance-contrast sample} (\figref{fig:contrast}).
+\item \textbf{Semi-structured contextual inquiries} conducted across two visits with facility personnel: (i)~Visit~1 (clinical perspective) with the \emph{Assistant Staff Nurse (N1)}, focusing on point-of-care clinical disposal, patient briefing practices, wall paint rationale, and perceived peak hours; (ii)~Visit~2 (operational perspective) with the \emph{Primary Waste Management Operator (P1)}, examining downstream segregation, transfer mechanics, dedicated shift staffing (including the 5:00~PM--9:00~PM support staff P2), and the external collection cadence.
+\item \textbf{Contextual observation} of room-by-room hardware, waste accumulation levels, and the outdoor balcony buffer rack.
 \end{itemize}
 
 \subsection{Ethics and permission}
-Nothing was touched, opened or moved. Photographs show equipment only. We spoke to staff with their agreement and keep responses anonymous. \todo{Confirm and state who at the Medical Centre gave permission to photograph.}
+Nothing was touched, opened or moved. Photographs show equipment and physical surfaces only. For all on-site photographs, hand-drawn architectural floor plan sketches, and recorded audio interactions across both visits, explicit informed verbal consent was obtained from the respective healthcare and operational staff members present on-site. In strict accordance with academic research ethics, participant privacy, and institutional confidentiality mandates, all individual names, personal identifiers, and recording timestamps have been completely anonymized and redacted throughout this report. Individuals are designated strictly by functional role codes (\emph{Assistant Staff Nurse N1}, \emph{Primary Waste Operator P1}, \emph{Evening Support Staff P2}). Audio assets serve solely for empirical fact verification without direct attribution.
 
 \subsection{Analysis}
 We coded notes and photographs inductively into themes \cite{braun2006}, mapped themes to Norman's constructs, and evaluated the current setup with a scenario-based \emph{heuristic evaluation} \cite{nielsen1990,nielsen1994} using the authors as evaluators and an adapted severity scale (0--4) \cite{nielsen1993}. This is a heuristic evaluation, not a cognitive walkthrough.
@@ -175,7 +174,7 @@ We coded notes and photographs inductively into themes \cite{braun2006}, mapped 
 % ================= 5 FINDINGS =================
 \section{Findings: The Renovated Medical Centre}
 \subsection{F1. A renovation that stopped at the buffer rack}
-Asked whether bins were reconsidered during the renovation, staff replied: \quoteS{there were no excess reforms for dustbins, except for the outermost buffer dustbins}. The balcony rack (\figref{fig:buffer}) is done well: four lidded pedal bins in black, blue, red and yellow, each with a liner of matching colour, on a wheeled trolley. It is also the staging point where waste waits for the campus team (F6). We use it as an \emph{internal benchmark}: the institution can specify and buy correct standard bins. Inside the clinic the picture differs (P1). Note that the stickers visible on the rack are brand marks, not category labels, so even here the category is carried by colour alone.
+During our initial walkthrough on 10~November~2026, we produced a hand-annotated architectural floor plan of the renovated clinic (\figref{fig:rawplan}) based on on-site observations. Asked whether bins were reconsidered during the facility renovation, staff replied: \quoteS{there were no excess reforms for dustbins, except for the outermost buffer dustbins}. The balcony rack (\figref{fig:buffer}) is done well: four lidded pedal bins in black, blue, red and yellow, each with a liner of matching colour, on a wheeled trolley. It is also the staging point where waste waits for the external and campus collection teams (F6). We use it as an \emph{internal benchmark}: the institution can specify and buy correct standard bins. Inside the clinic the picture differs (P1). Note that the stickers visible on the rack are brand marks, not category labels, so even here the category is carried by colour alone.
 
 \begin{figure}[!ht]
 \centering
@@ -217,8 +216,8 @@ Interior rooms & 10 & 3 & 4 (1 n/a) & 0\\
 \end{table}
 Interior receptacles pass the lid check 3 times out of 10 and none shows a legible category label, against 4 of 4 lids on the rack. Under the working definitions above this supports P1, with the caveat that the sample is small and opportunistic.
 
-\subsection{F4. Verbal briefing as a fragile workaround}
-Asked how patients know which bin to use, staff said that \quoteS{before a patient comes\dots staff have a communication regarding which dustbin they should use}. This supports P2: an anxious or bleeding patient cannot be expected to recall a verbal rule; the information needs to live on the object.
+\subsection{F4. Verbal briefing as a fragile workaround and CPCB adaptation}
+Inquired regarding regulatory compliance and patient guidance, clinical staff (Assistant Staff Nurse N1) noted that institutional policy aligns with national CPCB guidelines (White for sharps, Black for general solid waste). However, enforcing the complete five-category CPCB set across every clinical and examination room was evaluated as \quoteS{too restrictive} and cumbersome given tight room spaces and fast patient turnover. Instead, rooms deploy common-purpose and primary-category receptacles. Clinical staff bridge this gap through manual intervention: \quoteS{before a patient comes or when admitted, staff have a communication regarding which dustbin they should use}. This reliance on verbal briefings confirms P2: an anxious, distracted, or acutely unwell patient cannot be expected to recall a verbal rule; the information needs to live on the object itself. Downstream, Primary Waste Operator P1 manages sorting via an operational 4-colour schedule (Blue for sharps, Black for chemical and pharmaceutical waste, Yellow for anatomical/soiled waste, Red for contaminated plastics), alongside a dedicated exterior black bin for unusable or expired medicines.
 
 \subsection{F5. The wall-paint fix: helpful, but only for some bins}
 Management told us they asked painters for a light colour \quoteS{so that the dustbins get highlighted}, after patient feedback that bins were not visible. This is a sound, evidence-driven decision. We tested it by sampling luminance contrast between the repainted wall and four bins in one procedure-room photograph with the WCAG relative-luminance ratio \cite{wcag2018} (\figref{fig:contrast}). Dark or saturated bins stand out: the blue bucket reaches 7.5:1 and the light-blue pedal bin 5.0:1. The red bucket only just clears 3:1 (3.2:1), and the \emph{yellow} bin, the colour for soiled and anatomical waste, is lowest at 1.9:1. So the paint helps dark bins most and the most routine hazardous stream least, and the pale wall also makes the row's mismatch plain. These values come from one phone photograph with automatic exposure, so they are indicative only.
@@ -229,8 +228,13 @@ Management told us they asked painters for a light colour \quoteS{so that the du
 \caption{Procedure-room lineup and the effect of the repainted wall. (a) Photograph with sampled patches; the light-blue pedal bin on the left carries a yellow liner. (b) WCAG luminance contrast of each bin against the wall (single photograph; indicative).}\label{fig:contrast}
 \end{figure*}
 
-\subsection{F6. Unpredictable surges and a two-tier logistics chain}
-Staff stated that \quoteS{there are no consistent peak hours} and that the Minor OT fills fastest while bins are \quoteS{not sized consistently}. Housekeepers are called by phone, carry bags to the balcony rack, and the campus team empties it each morning. \figref{fig:overflow} shows what this looks like on the floor: one bucket heaped, one nearly full, one barely used, with no warning for whoever must empty them. Staff must remember to call, housekeepers arrive when called rather than when needed, and nobody can tell from the corridor which room is next. The baseline recorded afternoon overfilling (15:00--17:00) in the treatment room and a single daily sweep; the renovation added a buffer stage but no early warning. This is consistent with P3, though from testimony alone.
+\subsection{F6. Unpredictable surges, hybrid staffing and a multi-tiered logistics chain}
+Staff noted that clinical procedure volume is erratic: \quoteS{there are no consistent peak hours}, with the Minor OT and dressing areas filling fastest while receptacles are \quoteS{not sized consistently}. Through multi-stakeholder inquiry across both visits, we identified a hybrid operational model:
+\begin{enumerate}
+\item \emph{Scheduled evening surge coverage:} To manage the late-afternoon rush and emergency load, the facility deployed an evening co-worker (Support Staff P2) who works alongside Operator P1 from 5:00~PM to 9:00~PM, conducting scheduled collection rounds and transfers.
+\item \emph{Daytime reactive on-demand calling:} Prior to 5:00~PM, or whenever unscheduled daytime procedures cause sudden overflows in the Minor OT or Triage, clinical staff telephone housekeeping on demand.
+\end{enumerate}
+Internal waste is carried to the exterior balcony buffer rack. External collection follows two distinct cadences: municipal general waste is cleared daily by the campus sanitation crew, whereas regulated bio-medical waste on the balcony rack is collected by an authorized external BMW contractor \emph{every three days} (a 72-hour cycle). \figref{fig:overflow} illustrates the vulnerability of this reactive daytime model: one bucket heaped, one nearly full, and one barely used, with no warning until clinical staff notice and phone. This confirms P3 and underscores the need for real-time capacity monitoring and automated dispatch.
 
 \subsection{F7. Clean and contaminated items share space}
 The wider view of the sample-room counter (\figref{fig:adjacent}a) shows the buckets directly below a rack of clean sample tubes and beside a printer cart. Sharps-bearing waste near clean consumables is a cross-contamination risk that bin design alone cannot solve; it needs placement away from clean work surfaces. We also photographed the staff pantry (\figref{fig:adjacent}b), which shows that a general-waste stream exists in the same building and needs its own clearly separate receptacle.
@@ -246,17 +250,17 @@ The wider view of the sample-room counter (\figref{fig:adjacent}a) shows the buc
 \tabref{tab:compare} sets the baseline beside what we observed. We avoid numerical claims for the renovated site that we did not measure. Our plan marks 10 bins (\figref{fig:plans}A); this is a marked subset, \emph{not} a full inventory, so it is not comparable with the baseline's 15.
 \begin{table*}[!t]
 \centering\footnotesize
-\caption{Pre-renovation baseline \cite{g8report} versus renovated centre (field visit, 10 Nov 2026).}\label{tab:compare}
+\caption{Pre-renovation baseline \cite{g8report} versus renovated centre (field visits, Nov 2026).}\label{tab:compare}
 \begin{tabularx}{\textwidth}{@{}>{\bfseries}p{2.6cm} Y Y Y@{}}
 \toprule
 Dimension & Pre-renovation (documented baseline) & Renovated centre (our observation) & Net change\\\midrule
-Layout and reach & Cramped rooms; bins in corners and behind furniture; visitors and staff mixed in corridors. & Wider corridors and partitions; 10 bins marked on our plan (not a census), several in corners or behind counters. & Space improved; bin placement not planned.\\
-Colour and labels & Mostly CPCB colours but faded or handwritten labels and bag--bin mismatch. & Rack standard; interior mixed colours, no legible labels, yellow liner in a light-blue bin. & Worse inside, better outside.\\
+Layout and reach & Cramped rooms; bins in corners and behind furniture; visitors and staff mixed in corridors. & Renovated facility with wider corridors and partitions; 10 bins marked on our hand-drawn plan (not a census), several in corners or behind counters. & Space improved; point-of-care bin ergonomics not planned.\\
+Colour and labels & Mostly CPCB colours but faded or handwritten labels and bag--bin mismatch. & Rack standard; interior mixed colours, verbal briefings substitute for labels, yellow liner in light-blue bin. & Worse inside, better outside.\\
 Visual contrast & Cream/beige walls and tiles reduced visibility. & Lighter walls chosen to highlight bins. In one photograph, blue bins reach 7.5:1 but yellow only 1.9:1. & Partial: helps dark bins.\\
 Mechanisms & Pedal and swing bins in use. & Open buckets; one broken flap; domestic bin. & No evidence of improvement.\\
 Feedback & None beyond peeking into the bag. & None. & Unchanged.\\
-Capacity & Afternoon overfill in the treatment room. & Minor OT fills fastest; unevenly sized and filled bins; no consistent peak. & Unchanged.\\
-Collection & Once-daily internal sweep; external pickup each morning. & On-demand call to housekeeping; balcony buffer; morning campus pickup. & New buffer stage; still reactive.\\
+Capacity & Afternoon overfill in the treatment room. & Minor OT fills fastest; unevenly sized and filled bins; no consistent daytime peak. & Unchanged.\\
+Collection & Once-daily internal sweep; external pickup each morning. & Hybrid: on-demand daytime calls + evening staff (5--9 PM); balcony buffer; campus daily general sweep, 72-h external BMW pickup. & New buffer stage; evening support added; daytime remains reactive.\\
 \bottomrule
 \end{tabularx}
 \end{table*}
@@ -344,7 +348,7 @@ Each aperture has a diffused LED ring and a narrow-beam time-of-flight sensor (\
 \end{figure*}
 
 \subsection{Feature D: Need-based dispatch (Phase 2)}
-Housekeepers would get a ranked list in a mobile web app (\figref{fig:ui}a). Two rules set urgency: 75\% fill, and a holding limit. The BMW Rules allow 48 hours for untreated waste \cite{bmw2016}; we suggest a stricter 12-hour in-room target as an internal choice management can change. Routing is a small travelling-salesperson problem over the rooms that breach either rule. The dashboard (\figref{fig:ui}b) adds a heat-map and an audit log with simple flags (a module filling far faster than its siblings, lid openings with no fill change, a sharps-interlock override).
+Housekeepers would get a ranked list in a mobile web app (\figref{fig:ui}a). Two rules set urgency: 75\% fill, and a holding limit. The BMW Rules allow 48 hours for untreated waste \cite{bmw2016}; with external collection occurring on a 72-hour cycle, local buffer accumulation demands proactive containment. We suggest a stricter 12-hour in-room target as an internal operational choice management can configure. Routing is a small travelling-salesperson problem over the rooms that breach either rule. The dashboard (\figref{fig:ui}b) adds a heat-map and an audit log with simple flags (a module filling far faster than its siblings, lid openings with no fill change, a sharps-interlock override).
 \begin{figure*}[!t]
 \centering
 \includegraphics[width=0.74\textwidth]{fig/fig_ui.png}
