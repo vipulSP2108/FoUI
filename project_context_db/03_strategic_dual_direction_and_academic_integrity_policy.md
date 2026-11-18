@@ -1,13 +1,13 @@
 # Strategic Dual-Direction Framework & Academic Integrity Policy
 
-**Group ID:** Group M  
+**Group ID:** Group 9  
 **Document Classification:** Internal Strategy & Academic Integrity Standard  
 
 ---
 
 ## 1. The Dual-Direction Strategic Architecture
 
-In typical course projects, students select either an observational audit (Direction a) or a conceptual prototype (Direction b). Group M strategically unifies both into a coherent, high-impact design research trajectory:
+In typical course projects, students select either an observational audit (Direction a) or a conceptual prototype (Direction b). Group 9 strategically unifies both into a coherent, high-impact design research trajectory:
 
 ```
 [Phase 1: Empirical Evaluation (Direction a)]
@@ -40,14 +40,14 @@ In typical course projects, students select either an observational audit (Direc
 
 ### 2.2 Autonomous Authorship Standard
 To strictly fulfill the **Originality and Autonomous Reflection** assessment criterion:
-1. **Independent Narrative:** Every sentence of the 10-page report will be authored autonomously by Group M. No verbatim text, paragraph structures, or phrasing from the reference submission will be carried over.
-2. **Fresh Fieldwork:** Group M conducts fresh, original observational sessions at the renovated Medical Centre, generating its own room layout diagrams, distance logs, and photographic documentation.
-3. **Conceptual Distinction:** While the baseline project proposed a static, reactive Arduino/ESP32 bin ("Attentive Segregation System - ASS"), Group M conceptualizes an **AI-Powered Adaptive System (AI-AMWS)** featuring predictive surge forecasting (24–48h), cross-room dynamic capacity balancing, ambient LED rim guidance, and route-optimized custodial dispatching.
+1. **Independent Narrative:** Every sentence of the 10-page report will be authored autonomously by Group 9. No verbatim text, paragraph structures, or phrasing from the reference submission will be carried over.
+2. **Fresh Fieldwork:** Group 9 conducts fresh, original observational sessions at the renovated Medical Centre, generating its own room layout diagrams, distance logs, and photographic documentation.
+3. **Conceptual Distinction:** While the baseline project proposed a static, reactive Arduino/ESP32 bin ("Attentive Segregation System - ASS"), Group 9 conceptualizes an **AI-Powered Adaptive System (AI-AMWS)** featuring predictive surge forecasting (24–48h), cross-room dynamic capacity balancing, ambient LED rim guidance, and route-optimized custodial dispatching.
 
 ---
 
 ## 3. Academic Framing of the Comparative Study
-By structuring the project as a comparative study of the **renovated facility**, Group M provides genuine novel academic value:
+By structuring the project as a comparative study of the **renovated facility**, Group 9 provides genuine novel academic value:
 * Facility renovations in healthcare environments routinely cause spatial disorientation, workflow disruption, and mental model mismatch.
 * Comparing the old facility (cramped, static, low-contrast) against the renovated facility (larger, redesigned zoning, updated fixtures) provides a rich, naturalistic human factors case study.
 

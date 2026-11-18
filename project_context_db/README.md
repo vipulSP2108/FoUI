@@ -2,7 +2,7 @@
 **Course:** Foundations of User Experience (FUX), IIT Gandhinagar (IITGN)  
 **Semester:** Semester 1, 2026–2027  
 **Instructor:** Prof. Nuno M. Guimarães (`nuno.guimaraes@iitgn.ac.in`)  
-**Project Group:** Group M  
+**Project Group:** Group 9  
 **Selected Topic:** Topic 10 – Medical Waste Management  
 **Project Title:** AI-Powered Adaptive Medical Waste System (AI-AMWS): A Comparative UX Evaluation and Intelligent Design Evolution for the Renovated IITGN Medical Centre  
 **Final Submission Deadline:** November 23rd, 2026  
@@ -12,7 +12,7 @@
 
 ## Database Architecture & Modular Directory Structure
 
-This folder serves as the central context database for Group M's FUX final project. Each document is self-contained and named for immediate reference:
+This folder serves as the central context database for Group 9's FUX final project. Each document is self-contained and named for immediate reference:
 
 | File Name | Primary Topic / Purpose | Key Contents |
 | :--- | :--- | :--- |

@@ -2,7 +2,7 @@
 **Course:** Foundations of User Experience (FUX), IIT Gandhinagar (IITGN)  
 **Semester:** Semester 1, 2026–2027  
 **Instructor:** Prof. Nuno M. Guimarães (`nuno.guimaraes@iitgn.ac.in`)  
-**Project Group:** Group M  
+**Project Group:** Group 9  
 **Selected Topic:** Topic 10 – Medical Waste Management  
 **Project Title:** AI-Powered Adaptive Medical Waste System (AI-AMWS): A Comparative UX Evaluation and Intelligent Design Evolution for the Renovated IITGN Medical Centre  
 **Final Submission Deadline:** November 23rd, 2026  
@@ -32,7 +32,7 @@ The project exercises the practice of **observation, ideation, and preliminary d
 ### 1.2 The Two Course Directions
 * **Direction (a):** Pick an already developed artifact, explore its use and REAL users, grasp the mental models in operation, identify problems, suggest evolutions, play yourselves, and be critical about the user experience (UX).
 * **Direction (b):** Consider a problem, propose a new design, explain it and build a minimal prototype, try a simple evaluation to illustrate a cycle of refinement of the user experience.
-* **Group M Integrated Strategy:** Group M synthesizes **both directions**:
+* **Group 9 Integrated Strategy:** Group 9 synthesizes **both directions**:
   1. *Empirical & Comparative UX Evaluation:* Rigorously evaluates the renovated IITGN Medical Centre against the baseline setup (Direction a).
   2. *Intelligent Design Evolution:* Develops the conceptual architecture, UX interaction models, and minimal intervention prototypes for the **AI-AMWS** (Direction b).
 
@@ -49,11 +49,11 @@ The project exercises the practice of **observation, ideation, and preliminary d
 
 ### 2.1 Formal Email Dispatched to Prof. Nuno Guimarães
 ```text
-Subject: Group M - Topic 10 Project Approach Feedback
+Subject: Group 9 - Topic 10 Project Approach Feedback
 
 Dear Prof. Nuno,
 
-I am reaching out on behalf of Group M regarding our project for Topic 10 (Medical waste management). 
+I am reaching out on behalf of Group 9 regarding our project for Topic 10 (Medical waste management). 
 
 We are planning a comparative UX study focused on the recently renovated IITGN Medical Centre:
 1. Current Setup: Map and observe current room layouts, bin placements, and waste disposal workflows in the new facility.
@@ -63,8 +63,8 @@ We are planning a comparative UX study focused on the recently renovated IITGN M
 Does this comparative approach fit well within Direction (a), or would you suggest modifying our scope before we start fieldwork?
 
 Best regards,
-[Group M Representative]
-Group M — Foundations of User Experience (2026–2027)
+[Group 9 Representative]
+Group 9 — Foundations of User Experience (2026–2027)
 ```
 
 ### 2.2 Contingency & Execution Protocol
@@ -80,7 +80,7 @@ Group M — Foundations of User Experience (2026–2027)
 * **Zero Plagiarism / Autonomous Framing:** 
   * Group 8 is **never directly cited, named, or plagiarized** in the report.
   * The previous study's data represents the **"Pre-Renovation Medical Centre Baseline (2024–2025 Facility Setup)"**.
-  * All narrative, field findings at the new facility, user journey maps, affinity diagrams, and the AI-AMWS concept are authored autonomously by Group M.
+  * All narrative, field findings at the new facility, user journey maps, affinity diagrams, and the AI-AMWS concept are authored autonomously by Group 9.
 
 ### 3.2 Dual-Axis Comparative Architecture
 ```mermaid
@@ -151,7 +151,7 @@ graph TD
 ### 5.1 Context of the Renovated Facility (Post-Renovation)
 The IITGN Medical Centre has recently transitioned to an entirely new, expanded building on campus. This spatial renovation introduces new room geometries, altered patient circulation corridors, distinct lighting fixtures, and updated bin placement layouts.
 
-### 5.2 Field Observation Checklist for Group M
+### 5.2 Field Observation Checklist for Group 9
 * [ ] **Spatial Geometry & Room Mapping:**
   * Map exact square footage, door positions, and circulation paths for: Triage, Outpatient Consultation Cabins (OPD), Minor Operation Theatre (OT) / Procedure Room, Specimen/Sample Collection, Pharmacy & Dispensing, Observation Ward, Waiting Lounge.
 * [ ] **Bin Inventory & Spatial Coordinates:**
@@ -248,7 +248,7 @@ flowchart TD
 
 ## 8. Comprehensive Image, Diagram & Visual Asset Pipeline
 
-### 8.1 Category 1: Real Ground Photos & Floor Plans (Captured by Group M)
+### 8.1 Category 1: Real Ground Photos & Floor Plans (Captured by Group 9)
 
 The team conducted a full on-site contextual audit, capturing 12 real field assets stored in `ground work/`:
 
@@ -310,7 +310,7 @@ PAGE 1: TITLE, ABSTRACT, INTRODUCTION & COURSE FRAMING
 ----------------------------------------------------------------------------------------
 - Paper Title: AI-Powered Adaptive Medical Waste System (AI-AMWS): A Comparative UX 
                Evaluation and Intelligent Design Evolution for the Renovated IITGN Medical Centre
-- Author Byline: Group M, Foundations of User Experience, Semester 1, 2026–2027, IITGN
+- Author Byline: Group 9, Foundations of User Experience, Semester 1, 2026–2027, IITGN
 - Abstract (250 words): Problem definition, safety-critical HCI framing, comparative methodology,
                         core findings from renovated facility, AI-AMWS architecture, UX impact.
 - Section 1: Introduction & Motivation

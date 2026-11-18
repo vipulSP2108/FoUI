@@ -2,7 +2,7 @@
 
 **Data Classification:** Strictly Internal Baseline Reference Dataset  
 **Facility Context:** Old IITGN Medical Centre (Pre-Renovation Setup)  
-**Primary Function:** Longitudinal comparative baseline for Group M's evaluation of the renovated facility  
+**Primary Function:** Longitudinal comparative baseline for Group 9's evaluation of the renovated facility  
 
 ---
 
@@ -81,7 +81,7 @@ Group 8 conceptualized the **Attentive Segregation System (ASS)**:
 * **Firmware Behavior:** Monitored ultrasonic fill distance; triggered green tick / red cross icons on OLED; issued alerts when fill exceeded 80%.
 
 ### 6.2 Critical UX & Architectural Limitations of the Baseline Concept
-Group M's project directly addresses the significant operational gaps left open by this baseline system:
+Group 9's project directly addresses the significant operational gaps left open by this baseline system:
 1. **Rigid, Static Physical Footprint:** The 30L/20L bin capacities were permanently fixed. On heavy procedure days (e.g., campus vaccination drives or seasonal outbreaks), the Yellow bin rapidly overwhelmed while the Red bin remained nearly empty.
 2. **Purely Reactive Thresholding:** Issuing an alert only after reaching 80% capacity provides zero advance notice. Custodial staff often take 20–30 minutes to respond, leading to inevitable overflows.
 3. **Isolated Room Islanding:** The system treated each room as a silo, unable to share capacity data or recommend cross-room load rebalancing across the facility.

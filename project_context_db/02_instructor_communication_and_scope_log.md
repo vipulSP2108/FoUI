@@ -2,21 +2,21 @@
 
 **Recipient:** Prof. Nuno M. Guimarães (`nuno.guimaraes@iitgn.ac.in`)  
 **Course:** Foundations of User Experience (FUX), Semester 1, 2026–2027  
-**Sender:** Group M  
+**Sender:** Group 9  
 **Topic:** Topic 10 – Medical Waste Management  
 
 ---
 
 ## 1. Formal Email Dispatched to Prof. Nuno
 
-The following email was drafted and submitted to Prof. Nuno Guimarães to formally confirm the comparative scope and methodological alignment of Group M's project:
+The following email was drafted and submitted to Prof. Nuno Guimarães to formally confirm the comparative scope and methodological alignment of Group 9's project:
 
 ```text
-Subject: Group M - Topic 10 Project Approach Feedback
+Subject: Group 9 - Topic 10 Project Approach Feedback
 
 Dear Prof. Nuno,
 
-I am reaching out on behalf of Group M regarding our project for Topic 10 (Medical waste management). 
+I am reaching out on behalf of Group 9 regarding our project for Topic 10 (Medical waste management). 
 
 We are planning a comparative UX study focused on the recently renovated IITGN Medical Centre:
 1. Current Setup: Map and observe current room layouts, bin placements, and waste disposal workflows.
@@ -26,8 +26,8 @@ We are planning a comparative UX study focused on the recently renovated IITGN M
 Does this comparative approach fit well within Direction (a), or would you suggest modifying our scope before we start fieldwork?
 
 Best regards,
-[Group M Representative]
-Group M
+[Group 9 Representative]
+Group 9
 Foundations of User Experience (2026–2027)
 ```
 

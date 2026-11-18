@@ -1,6 +1,6 @@
 # Empirical Fieldwork Findings & Ground Truth Evidence
 **Field Investigation Date:** November 10, 2026  
-**Investigator Group:** Group M  
+**Investigator Group:** Group 9  
 **Site:** Renovated IITGN Medical Centre  
 **Data Sources:** On-site contextual inquiry, staff semi-structured interviews, real photographic audit (12 images), and naturalistic hand-drawn architectural floor mapping.
 
@@ -44,7 +44,7 @@ When questioned regarding the inconsistent coloring and total absence of categor
 Staff revealed a crucial management decision:
 > *“We explicitly talked with the painters to use a light colour so that the dustbins get highlighted, because we had got reviews from various patients that the dustbins were not quite visible.”*
 
-* **Empirical Validation of Baseline Hypothesis:** This confirms Group M's theoretical baseline analysis: patient complaints regarding low visual contrast were recognized by management!
+* **Empirical Validation of Baseline Hypothesis:** This confirms Group 9's theoretical baseline analysis: patient complaints regarding low visual contrast were recognized by management!
 * **UX Incompleteness:** Changing the wall paint was a passive architectural fix. Because the bins themselves lack standardized chromatic signifiers, high-visibility backplates, and active LED illumination, clinicians still experience visual tunnel vision and hesitation.
 
 ### Finding 4: Unpredictable Peak Surges & Minor OT Overflow

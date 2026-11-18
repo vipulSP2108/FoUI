@@ -1,7 +1,7 @@
 ---
 title: "IITGN Medical Centre — Field Visit Guide"
-subtitle: "FUX Final Project · Group M · Topic 10: Medical Waste Management"
-author: "Group M · Foundations of User Experience · Semester 1, 2026–2027 · IIT Gandhinagar"
+subtitle: "FUX Final Project · Group 9 · Topic 10: Medical Waste Management"
+author: "Group 9 · Foundations of User Experience · Semester 1, 2026–2027 · IIT Gandhinagar"
 date: "November 2026"
 geometry: "top=25mm, bottom=25mm, left=22mm, right=22mm"
 fontsize: 11pt
@@ -18,7 +18,7 @@ header-includes:
   - \usepackage{enumitem}
   - \pagestyle{fancy}
   - \fancyhf{}
-  - \fancyhead[L]{\small Group M · FUX Field Visit Guide}
+  - \fancyhead[L]{\small Group 9 · FUX Field Visit Guide}
   - \fancyhead[R]{\small IITGN Medical Centre · Nov 2026}
   - \fancyfoot[C]{\thepage}
   - \renewcommand{\headrulewidth}{0.4pt}
@@ -498,7 +498,7 @@ These help you gather evidence for your design proposal without revealing your f
 
 ---
 
-*End of Field Visit Guide — Group M, FUX Final Project 2026–2027*
+*End of Field Visit Guide — Group 9, FUX Final Project 2026–2027*
 
 *Do not leave this document in the facility or share it with staff.*
 

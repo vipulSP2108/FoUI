@@ -3,7 +3,7 @@
 **Course:** Foundations of User Experience (FUX), IIT Gandhinagar (IITGN)  
 **Academic Period:** Semester 1, 2026–2027  
 **Instructor:** Prof. Nuno M. Guimarães (`nuno.guimaraes@iitgn.ac.in`)  
-**Project Group:** Group M  
+**Project Group:** Group 9  
 **Selected Topic:** Topic 10 – Medical Waste Management  
 **Final Submission Deadline:** November 23rd, 2026 (via email to `nuno.guimaraes@iitgn.ac.in`)  
 **Deliverable Format:** 10-page formal academic report (~5,000 words reference target) formatted in LaTeX (`.tex`)
@@ -36,8 +36,8 @@ The course guidelines specify two possible directions for the final project:
 * Build a minimal prototype (physical mockup, software interface, or hardware demonstrator).
 * Conduct a simple evaluation with representative users to illustrate at least one cycle of UX refinement.
 
-### Group M's Integrated Strategy: The Dual-Direction Synthesis
-Rather than selecting only one narrow pathway, Group M executes an integrated synthesis of both directions:
+### Group 9's Integrated Strategy: The Dual-Direction Synthesis
+Rather than selecting only one narrow pathway, Group 9 executes an integrated synthesis of both directions:
 * **Empirical Direction (a) Component:** Conducting a comparative longitudinal study of the **renovated IITGN Medical Centre** against historical baseline data from the previous facility setup.
 * **Evolutionary Direction (b) Component:** Proposing, detailing, and evaluating the **AI-Powered Adaptive Medical Waste System (AI-AMWS)** with physical visual cues and predictive capacity rebalancing.
 
@@ -85,7 +85,7 @@ Prof. Nuno provided 16 approved problem spaces for the semester:
 7. Sports & physical health
 8. Accessibility (on Campus)
 9. Garbage separation and recycling
-10. **Medical waste management** *(Selected by Group M)*
+10. **Medical waste management** *(Selected by Group 9)*
 11. Food waste
 12. Cleaning and maintenance optimization
 13. Reading and studying groups

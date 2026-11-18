@@ -1,6 +1,6 @@
 # Proposed Design Evolution: AI-Powered Adaptive Medical Waste System (AI-AMWS)
 
-**Project Group:** Group M  
+**Project Group:** Group 9  
 **Concept Classification:** Intelligent Socio-Technical Artifact & Healthcare UX System  
 
 ---

@@ -1,7 +1,7 @@
 # Renovated Medical Centre Fieldwork & Observation Checklist
 
 **Target Site:** Newly Renovated IITGN Medical Centre (Current Campus Facility)  
-**Primary Investigator Group:** Group M  
+**Primary Investigator Group:** Group 9  
 **Execution Purpose:** Gathering primary empirical UX data to compare with the historical baseline  
 
 ---
@@ -11,7 +11,7 @@
 The goal of this fieldwork is to map the physical ergonomics, spatial circulation, signage visibility, and waste disposal behaviors in the **newly renovated Medical Centre building**. 
 
 > [!IMPORTANT]
-> **Ethical & Safety Protocol:** Under no circumstances should Group M members physically handle, open, or tamper with bio-medical waste bags. All observations are strictly visual, non-contact, and conducted without photographing patient or staff faces.
+> **Ethical & Safety Protocol:** Under no circumstances should Group 9 members physically handle, open, or tamper with bio-medical waste bags. All observations are strictly visual, non-contact, and conducted without photographing patient or staff faces.
 
 ---
 

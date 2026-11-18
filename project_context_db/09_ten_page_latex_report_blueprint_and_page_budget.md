@@ -15,7 +15,7 @@ PAGE 1: TITLE, ABSTRACT, INTRODUCTION & PROJECT MOTIVATION
 --------------------------------------------------------------------------------------------------
 * Title: AI-Powered Adaptive Medical Waste System (AI-AMWS): A Comparative UX Evaluation and 
          Intelligent Design Evolution for the Renovated IITGN Medical Centre
-* Authors: Group M, Foundations of User Experience, Semester 1, 2026–2027, IITGN
+* Authors: Group 9, Foundations of User Experience, Semester 1, 2026–2027, IITGN
 * Abstract (250 words): Contextual summary of healthcare waste management, safety-critical HCI,
   comparative methodology, core findings at renovated facility, AI-AMWS architecture, UX impact.
 * Section 1: Introduction & Motivation

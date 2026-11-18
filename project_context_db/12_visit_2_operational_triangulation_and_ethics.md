@@ -2,7 +2,7 @@
 
 **Course:** Foundations of User Experience (FUX), IIT Gandhinagar (IITGN)  
 **Semester:** Semester 1, 2026–2027  
-**Project Group:** Group M (Topic 10: Medical Waste Management)  
+**Project Group:** Group 9 (Topic 10: Medical Waste Management)  
 **Investigation Sites & Visits:**  
 - **Visit 1 (Clinical Perspective):** Semi-structured contextual inquiry with **Assistant Staff Nurse (N1)** and clinical observation.  
 - **Visit 2 (Operational Perspective):** Contextual inquiry and audio verification with **Primary Waste Management Operator (P1)** and operational workflow review.  

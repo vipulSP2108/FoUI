@@ -12,7 +12,7 @@ The final 10-page LaTeX report integrates three complementary categories of visu
 
 ---
 
-## 2. Category 1: Real Ground Photos & Floor Plans (Captured by Group M)
+## 2. Category 1: Real Ground Photos & Floor Plans (Captured by Group 9)
 
 The team captured 12 real field assets stored in `ground work/`. These provide indisputable empirical proof of the failure modes discussed:
 
