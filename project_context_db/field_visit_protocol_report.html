@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IITGN Medical Centre — Fieldwork Protocol & UX Instrument (Comprehensive v2.1)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Latin+Modern+Roman:ital,wght@0,400;0,700;1,400;1,700&family=Latin+Modern+Sans:wght@400;700&display=swap');
+
+  @page {
+    size: A4;
+    margin: 18mm 16mm 18mm 16mm;
+    @top-left {
+      content: 'IITGN Medical Centre · Fieldwork Protocol & UX Instrument';
+      font-family: 'Latin Modern Sans', -apple-system, sans-serif;
+      font-size: 8pt;
+      color: #495057;
+      font-weight: 600;
+    }
+    @top-right {
+      content: 'Group M · Topic 10';
+      font-family: 'Latin Modern Sans', -apple-system, sans-serif;
+      font-size: 8pt;
+      color: #495057;
+      font-weight: 600;
+    }
+    @bottom-left {
+      content: 'Foundations of User Experience (FUX 2026–2027)';
+      font-family: 'Latin Modern Sans', -apple-system, sans-serif;
+      font-size: 8pt;
+      color: #6c757d;
+    }
+    @bottom-center {
+      content: 'IIT Gandhinagar';
+      font-family: 'Latin Modern Sans', -apple-system, sans-serif;
+      font-size: 8pt;
+      color: #6c757d;
+    }
+    @bottom-right {
+      content: counter(page);
+      font-family: 'Latin Modern Sans', -apple-system, sans-serif;
+      font-size: 8pt;
+      color: #6c757d;
+    }
+  }
+
+  body {
+    font-family: 'Latin Modern Roman', 'Times New Roman', Times, Georgia, serif;
+    font-size: 10pt;
+    line-height: 1.48;
+    color: #1a1a1a;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Header & Title Area */
+  .inst-header {
+    text-align: center;
+    margin-bottom: 12pt;
+    border-bottom: 0.5pt solid #bbb;
+    padding-bottom: 6pt;
+  }
+  .inst-header .univ {
+    font-size: 13pt;
+    letter-spacing: 0.8pt;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #0e2b5c;
+  }
+  .inst-header .course {
+    font-size: 9.5pt;
+    font-weight: 600;
+    color: #333;
+    margin-top: 2pt;
+  }
+  .inst-header .prof {
+    font-size: 8.5pt;
+    color: #555;
+    margin-top: 1pt;
+  }
+
+  .title-card {
+    background: #f8f9fa;
+    border: 1.5pt solid #0e2b5c;
+    border-radius: 4pt;
+    padding: 10pt 14pt;
+    text-align: center;
+    margin-bottom: 10pt;
+  }
+  .title-card h1 {
+    font-family: 'Latin Modern Roman', Georgia, serif;
+    font-size: 15pt;
+    margin: 0 0 3pt 0;
+    color: #0e2b5c;
+    line-height: 1.3;
+    font-weight: bold;
+  }
+  .title-card .subtitle {
+    font-size: 10.5pt;
+    color: #2b2d42;
+    font-weight: 600;
+    margin-bottom: 3pt;
+  }
+  .title-card .topic {
+    font-size: 9pt;
+    color: #495057;
+  }
+
+  .meta-bar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 8pt;
+    color: #495057;
+    background: #eef2f6;
+    padding: 4pt 8pt;
+    border-radius: 3pt;
+    margin-bottom: 12pt;
+  }
+
+  .abstract-box {
+    margin: 0 10pt 12pt 10pt;
+    font-size: 9pt;
+    line-height: 1.42;
+    text-align: justify;
+    color: #2b2d42;
+    border-left: 2.5pt solid #0e2b5c;
+    padding-left: 8pt;
+  }
+
+  /* Headings */
+  h2 {
+    font-size: 12pt;
+    color: #0e2b5c;
+    border-bottom: 1pt solid #0e2b5c;
+    padding-bottom: 2pt;
+    margin-top: 16pt;
+    margin-bottom: 5pt;
+    font-weight: bold;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 10.2pt;
+    color: #0e2b5c;
+    margin-top: 10pt;
+    margin-bottom: 3pt;
+    font-weight: bold;
+    page-break-after: avoid;
+  }
+  p {
+    margin: 0 0 5pt 0;
+    text-align: justify;
+  }
+
+  /* Callout Boxes */
+  .alert-box {
+    background: #fdf2f2;
+    border: 1pt solid #e02424;
+    border-left: 3.5pt solid #e02424;
+    border-radius: 3pt;
+    padding: 7pt 10pt;
+    margin: 8pt 0;
+    font-size: 8.8pt;
+    page-break-inside: avoid;
+  }
+  .alert-box .title {
+    font-weight: bold;
+    color: #9b1c1c;
+    margin-bottom: 2pt;
+    font-size: 9.2pt;
+  }
+  .info-box {
+    background: #f0f4f8;
+    border: 1pt solid #0e2b5c;
+    border-left: 3.5pt solid #0e2b5c;
+    border-radius: 3pt;
+    padding: 7pt 10pt;
+    margin: 8pt 0;
+    font-size: 8.8pt;
+    page-break-inside: avoid;
+  }
+  .info-box .title {
+    font-weight: bold;
+    color: #0e2b5c;
+    margin-bottom: 2pt;
+    font-size: 9.2pt;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8pt 0;
+    font-size: 8.5pt;
+    page-break-inside: avoid;
+  }
+  th {
+    background: #0e2b5c;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: left;
+    padding: 4.5pt 6pt;
+    border-top: 1.5pt solid #0e2b5c;
+    border-bottom: 1.5pt solid #0e2b5c;
+  }
+  td {
+    padding: 4pt 6pt;
+    border-bottom: 0.5pt solid #dee2e6;
+    vertical-align: top;
+  }
+  tr:nth-child(even) td {
+    background: #f8f9fa;
+  }
+  .table-caption {
+    font-size: 8pt;
+    color: #495057;
+    font-style: italic;
+    margin-top: 2pt;
+    margin-bottom: 8pt;
+    text-align: center;
+  }
+
+  /* Badges */
+  .badge {
+    display: inline-block;
+    padding: 1pt 4pt;
+    border-radius: 2pt;
+    font-weight: bold;
+    font-size: 7.8pt;
+  }
+  .badge-yellow { background: #fff3cd; color: #856404; border: 1pt solid #ffeeba; }
+  .badge-red { background: #f8d7da; color: #721c24; border: 1pt solid #f5c6cb; }
+  .badge-blue { background: #cce5ff; color: #004085; border: 1pt solid #b8daff; }
+  .badge-white { background: #e2e3e5; color: #383d41; border: 1pt solid #d6d8db; }
+  .badge-black { background: #343a40; color: #ffffff; }
+
+  /* Lists */
+  ul, ol {
+    margin: 0 0 6pt 0;
+    padding-left: 16pt;
+  }
+  li {
+    margin-bottom: 2.5pt;
+  }
+
+  .page-break {
+    page-break-before: always;
+  }
+
+  .script-quote {
+    font-style: italic;
+    color: #212529;
+    background: #ffffff;
+    padding: 2.5pt 5pt;
+    border-left: 2pt solid #0e2b5c;
+    display: block;
+    margin: 2.5pt 0;
+  }
+
+  .fillable-line {
+    border-bottom: 0.8pt solid #333;
+    display: inline-block;
+    min-width: 120px;
+    height: 12px;
+  }
+  .checkbox-box {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1pt solid #333;
+    margin-right: 3px;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+
+<!-- INSTITUTIONAL MASTHEAD -->
+<div class="inst-header">
+  <div class="univ">Indian Institute of Technology Gandhinagar</div>
+  <div class="course">Foundations of User Experience (FUX) · Semester 1, 2026–2027</div>
+  <div class="prof">Course Instructor: Prof. Nuno M. Guimarães (<span style="font-family:monospace;">nuno.guimaraes@iitgn.ac.in</span>)</div>
+</div>
+
+<!-- TITLE CARD -->
+<div class="title-card">
+  <h1>Fieldwork Protocol & Ethnographic Inquiry Guide</h1>
+  <div class="subtitle">Comparative UX Evaluation & Intelligent System Feasibility Assessment</div>
+  <div class="topic"><strong>Topic 10: Medical Waste Management</strong> · Renovated IITGN Medical Centre Facility</div>
+</div>
+
+<div class="meta-bar">
+  <span><strong>Author Group:</strong> Group M</span>
+  <span><strong>Document Classification:</strong> Fieldwork Research Instrument</span>
+  <span><strong>Version:</strong> 2.1 (Comprehensive Protocol)</span>
+  <span><strong>Date:</strong> November 2026</span>
+</div>
+
+<!-- ABSTRACT -->
+<div class="abstract-box">
+  <strong>Executive Abstract & Pedagogical Mandate:</strong> This document serves as the formal operational instrument, observational guide, and multi-stakeholder interview manual for Group M’s field research at the recently renovated IIT Gandhinagar (IITGN) Medical Centre. Addressing the dual requirements of <em>Direction (a)</em> (comparative UX evaluation of an active socio-technical facility) and <em>Direction (b)</em> (evaluative grounding for the AI-Powered Adaptive Medical Waste System, AI-AMWS), this protocol provides rigorous tools for mapping physical affordances, logging naturalistic cognitive slips, and evaluating staff mental models under clinical workloads.
+</div>
+
+<!-- PART A -->
+<h2>Part A — Pre-Fieldwork Context & Theoretical Foundation</h2>
+
+<h3>A1. Investigation Context: Why This Visit Matters</h3>
+<p>
+The IITGN Medical Centre recently completed a major architectural and interior renovation of its existing facility. In healthcare human factors, facility renovations represent a critical phenomenon: while the building shell remains familiar, altered room partitions, relocated supply stations, new wall paint, and shifted bin positions disrupt established staff muscle memory.
+</p>
+<ul>
+  <li><strong>Objective 1 (Empirical Reality Mapping):</strong> Document the post-renovation setup: physical bin placements, room clearances, luminance contrast, and authentic user behaviors (slips, hesitations, workarounds).</li>
+  <li><strong>Objective 2 (AI-AMWS Grounding):</strong> Gather concrete operational evidence (peak surges, cross-room capacity imbalances, custodial travel delays) to justify the four innovations of Group M's original design proposal.</li>
+</ul>
+
+<h3>A2. Pre-Renovation Baseline Knowledge (Internal Dataset — Do NOT Mention to Staff)</h3>
+<p>
+The pre-renovation facility setup revealed eight documented failure points. These serve as your silent baseline checklist:
+</p>
+<table>
+  <thead>
+    <tr>
+      <th style="width: 44%;">Documented Pre-Renovation Problem (Baseline)</th>
+      <th>What to Verify in Renovated Facility</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Yellow & Red bins blended into cream/beige tiles (contrast ratio &lt;2.5:1).</td>
+      <td>Has new wall paint or tile finish improved luminance contrast? Do bins pop visually?</td>
+    </tr>
+    <tr>
+      <td>Faded stickers, peeling labels, and handwritten polybag markers.</td>
+      <td>Are stickers professionally printed, standardized, and scratch/disinfectant-resistant?</td>
+    </tr>
+    <tr>
+      <td>Treatment Room bins suffered severe overflows between 15:00 and 17:00 daily.</td>
+      <td>Are bin capacities tailored to room-specific procedural volumes, or still uniform?</td>
+    </tr>
+    <tr>
+      <td>Clinicians hesitated 2–4 seconds at bins under procedural rush.</td>
+      <td>Is decision latency observed in the renovated layout? Does ambiguity persist?</td>
+    </tr>
+    <tr>
+      <td>Sharps container mounted at awkward angles causing puncture hazards.</td>
+      <td>Is the sharps destroyer/box mounted at natural eye/elbow level near the phlebotomy chair?</td>
+    </tr>
+    <tr>
+      <td>Visitors and patients routinely threw food wrappers into medical Yellow bins.</td>
+      <td>Does the renovated waiting area physically separate general and clinical waste?</td>
+    </tr>
+    <tr>
+      <td>Housekeeping had no fill notifications; operated on rigid clock-based rounds.</td>
+      <td>Has collection scheduling modernized, or does cleaning staff still rely on guesswork?</td>
+    </tr>
+    <tr>
+      <td>Bins placed in far room corners, requiring 180&deg; turns and walking across rooms.</td>
+      <td>Are bins positioned within arm’s reach of examination tables and dressing carts?</td>
+    </tr>
+  </tbody>
+</table>
+<div class="table-caption">Table 1: Pre-Renovation Baseline Failures vs. In-Situ Verification Targets.</div>
+
+<h3>A3. CPCB Regulatory Bio-Medical Waste Standards (India 2016 Rules)</h3>
+<ul>
+  <li><span class="badge badge-yellow">Yellow Bin</span> <strong>Pathological & Soiled:</strong> Anatomical tissue, soiled dressings, gauze, bandages, plaster casts, expired medicines. <em>Common Slips:</em> Food wrappers, used tissues, or general plastic wrapping tossed in.</li>
+  <li><span class="badge badge-red">Red Bin</span> <strong>Contaminated Recyclable Plastics:</strong> Disposable gloves, catheters, IV tubing, urine bags, needle-less syringes. <em>Common Slips:</em> Needles left attached to syringes; glass ampoules thrown in.</li>
+  <li><span class="badge badge-blue">Blue Bin</span> <strong>Glassware & Metallic Implants:</strong> Broken medicine ampoules, vials, glassware, orthopedic metal pins. <em>Common Slips:</em> Syringe plastic barrels, general non-glass rubbish.</li>
+  <li><span class="badge badge-white">White Translucent</span> <strong>Puncture-Proof Sharps Box:</strong> Needles, scalpels, surgical blades, contaminated lancets. <em>Common Slips:</em> Cotton swabs or plastic caps forced into narrow apertures.</li>
+  <li><span class="badge badge-black">Black / Green</span> <strong>General Municipal Solid Waste:</strong> Non-contaminated paper, sterile packaging boxes, food remnants. <em>Common Slips:</em> Blood-stained bandages or used clinical gloves.</li>
+</ul>
+
+<h3>A4. Theoretical HCI Concepts Applied to Field Observation</h3>
+<ul>
+  <li><strong>Don Norman’s Action Cycle:</strong> Examine the <em>Gulf of Execution</em> (mental effort to identify the correct receptacle) and the <em>Gulf of Evaluation</em> (absence of confirming feedback). Evaluate <em>Affordance</em> (do aperture shapes communicate item types?), <em>Signifiers</em> (clarity of color codes and pictograms), and <em>Spatial Mapping</em> (proximity to procedural points).</li>
+  <li><strong>Rasmussen’s SRK Framework:</strong> Differentiate <em>Skill-based slips</em> (experienced nurses on autopilot discarding gloves into wrong bins), <em>Rule-based mistakes</em> (confusing plastics vs. sharps rules for combination devices), and <em>Knowledge-based errors</em> (untrained visitors).</li>
+  <li><strong>Reason’s Swiss Cheese Model:</strong> Analyze how latent systemic flaws (poor task lighting, camouflaging wall paint, stock shortages of red bags) align with clinician fatigue to cause safety breakdowns.</li>
+</ul>
+
+<div class="alert-box">
+  <div class="title">MANDATORY BIOSAFETY & ETHICAL DIRECTIVES</div>
+  <ul>
+    <li><strong>Absolute Zero Biohazard Contact:</strong> Under no circumstances touch, open, handle, or sort bio-medical waste bags.</li>
+    <li><strong>Facial Anonymity & Privacy:</strong> Photograph only physical hardware, wall contrast, and floor layouts. Never photograph patient or staff faces.</li>
+    <li><strong>Non-Disruption Mandate:</strong> Clinical procedures take 100% precedence. If emergency care begins, immediately withdraw.</li>
+  </ul>
+</div>
+
+<div class="page-break"></div>
+
+<!-- PART B -->
+<h2>Part B — Silent Observation & Structured Audit Protocol</h2>
+<p>
+Spend the initial 60–90 minutes conducting silent, non-intrusive data collection prior to initiating staff interviews.
+</p>
+
+<h3>B1. Room-by-Room Environmental & Bin Inventory Form</h3>
+<p><em>Use this printable template for each functional room visited (Triage, OPD 1–3, Minor OT, Sample Room, Pharmacy, Waiting Lounge):</em></p>
+
+<div class="info-box">
+  <div style="display: flex; justify-content: space-between; margin-bottom: 4pt;">
+    <span><strong>Room Name:</strong> <span class="fillable-line" style="min-width: 140px;"></span></span>
+    <span><strong>Room Function:</strong> <span class="fillable-line" style="min-width: 140px;"></span></span>
+    <span><strong>Time Audited:</strong> <span class="fillable-line" style="min-width: 80px;"></span></span>
+  </div>
+  <strong>Receptacles Present & Visual State:</strong><br>
+  <span class="checkbox-box"></span> <strong>Yellow Bin:</strong> Condition: <span class="fillable-line" style="min-width: 100px;"></span> Wall Color Behind Bin: <span class="fillable-line" style="min-width: 100px;"></span><br>
+  <span class="checkbox-box"></span> <strong>Red Bin:</strong> Condition: <span class="fillable-line" style="min-width: 100px;"></span> Wall Color Behind Bin: <span class="fillable-line" style="min-width: 100px;"></span><br>
+  <span class="checkbox-box"></span> <strong>Blue Bin:</strong> Condition: <span class="fillable-line" style="min-width: 100px;"></span> Wall Color Behind Bin: <span class="fillable-line" style="min-width: 100px;"></span><br>
+  <span class="checkbox-box"></span> <strong>White Sharps:</strong> Condition: <span class="fillable-line" style="min-width: 80px;"></span> Mounted On: <span class="checkbox-box"></span> Wall Bracket &nbsp; <span class="checkbox-box"></span> Trolley Cart &nbsp; <span class="checkbox-box"></span> Floor<br>
+  <span class="checkbox-box"></span> <strong>Black General:</strong> Condition: <span class="fillable-line" style="min-width: 100px;"></span> Wall Color Behind Bin: <span class="fillable-line" style="min-width: 100px;"></span><br><br>
+  
+  <strong>Lighting Assessment:</strong> <span class="checkbox-box"></span> Natural Daylight &nbsp; <span class="checkbox-box"></span> Overhead LED Panel &nbsp; <span class="checkbox-box"></span> Fluorescent Tube &nbsp; <span class="checkbox-box"></span> Mixed<br>
+  Illumination Quality at Bin Aperture: <span class="checkbox-box"></span> Bright &nbsp; <span class="checkbox-box"></span> Adequate &nbsp; <span class="checkbox-box"></span> Shadow Zone / Dim<br><br>
+
+  <strong>Spatial & Mechanical Ergonomics:</strong><br>
+  • Distance from procedure examination cot to nearest clinical bin: <span class="fillable-line" style="min-width: 60px;"></span> metres / <span class="fillable-line" style="min-width: 40px;"></span> steps<br>
+  • Is the bin cluster visible from the procedure point without turning around? <span class="checkbox-box"></span> Yes &nbsp; <span class="checkbox-box"></span> No<br>
+  • Does the bin have a functional foot pedal? <span class="checkbox-box"></span> Yes &nbsp; <span class="checkbox-box"></span> No &nbsp; Condition: <span class="checkbox-box"></span> Smooth &nbsp; <span class="checkbox-box"></span> Stiff &nbsp; <span class="checkbox-box"></span> Broken/Jammed<br><br>
+
+  <strong>Signage & Affordance Clarity:</strong><br>
+  • Signage Type: <span class="checkbox-box"></span> No Signage &nbsp; <span class="checkbox-box"></span> Handwritten Marker &nbsp; <span class="checkbox-box"></span> Printed Wall Poster &nbsp; <span class="checkbox-box"></span> Bin Body Sticker<br>
+  • Languages: <span class="checkbox-box"></span> English Only &nbsp; <span class="checkbox-box"></span> Bilingual (English + Gujarati/Hindi) &nbsp; <span class="checkbox-box"></span> Pictograms Included<br>
+  • Mis-Segregation Evident Inside Bag: <span class="checkbox-box"></span> None &nbsp; <span class="checkbox-box"></span> Occasional (&le;2 items) &nbsp; <span class="checkbox-box"></span> Severe Contamination<br>
+  • Observed Contaminants: <span class="fillable-line" style="min-width: 300px;"></span>
+</div>
+
+<h3>B2. Naturalistic Disposal Event Observation Tally Sheet</h3>
+<p>Log a minimum of 25–30 distinct disposal actions. Note: <strong>Hesitation</strong> = pause &ge;2 seconds. <strong>Head-Turn</strong> = user inspects label or looks inside bag prior to dropping waste.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 5%;">#</th>
+      <th style="width: 10%;">Time</th>
+      <th style="width: 18%;">Room / Zone</th>
+      <th style="width: 16%;">Staff Role</th>
+      <th style="width: 10%;">Hesitate?</th>
+      <th style="width: 10%;">Head-Turn?</th>
+      <th style="width: 12%;">Outcome</th>
+      <th>Disposal Context & Item Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>01</td><td></td><td></td><td>Dr / Nu / HK / Pa</td><td>Y / N</td><td>Y / N</td><td>Correct / Slip</td><td></td></tr>
+    <tr><td>02</td><td></td><td></td><td>Dr / Nu / HK / Pa</td><td>Y / N</td><td>Y / N</td><td>Correct / Slip</td><td></td></tr>
+    <tr><td>03</td><td></td><td></td><td>Dr / Nu / HK / Pa</td><td>Y / N</td><td>Y / N</td><td>Correct / Slip</td><td></td></tr>
+    <tr><td>04</td><td></td><td></td><td>Dr / Nu / HK / Pa</td><td>Y / N</td><td>Y / N</td><td>Correct / Slip</td><td></td></tr>
+    <tr><td>05</td><td></td><td></td><td>Dr / Nu / HK / Pa</td><td>Y / N</td><td>Y / N</td><td>Correct / Slip</td><td></td></tr>
+    <tr><td>06</td><td></td><td></td><td>Dr / Nu / HK / Pa</td><td>Y / N</td><td>Y / N</td><td>Correct / Slip</td><td></td></tr>
+    <tr><td>07</td><td></td><td></td><td>Dr / Nu / HK / Pa</td><td>Y / N</td><td>Y / N</td><td>Correct / Slip</td><td></td></tr>
+    <tr><td>08</td><td></td><td></td><td>Dr / Nu / HK / Pa</td><td>Y / N</td><td>Y / N</td><td>Correct / Slip</td><td></td></tr>
+    <tr><td>09</td><td></td><td></td><td>Dr / Nu / HK / Pa</td><td>Y / N</td><td>Y / N</td><td>Correct / Slip</td><td></td></tr>
+    <tr><td>10</td><td></td><td></td><td>Dr / Nu / HK / Pa</td><td>Y / N</td><td>Y / N</td><td>Correct / Slip</td><td></td></tr>
+  </tbody>
+</table>
+<div class="table-caption">Table 2: Disposal Action Field Observation Protocol and Tally Log.</div>
+
+<h3>B3. Photographic Documentation Protocol (8 Target Shots)</h3>
+<p>Capture these eight photographic assets prior to interviews while the clinical environment is undisturbed:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 8%;">Shot</th>
+      <th style="width: 14%;">LaTeX Tag</th>
+      <th style="width: 44%;">Scene Framing & Subject</th>
+      <th>Analytical UX Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>P1</strong></td>
+      <td><code>FIG_REAL_01</code></td>
+      <td>Wide shot of Triage room showing cot + all surrounding bins together.</td>
+      <td>Shows spatial ergonomics, pedal clearance, and reach distance.</td>
+    </tr>
+    <tr>
+      <td><strong>P2</strong></td>
+      <td><code>FIG_REAL_02</code></td>
+      <td>Close-up of signage poster on wall — full frame including wall colour.</td>
+      <td>For contrast ratio, font legibility, and bilingual hierarchy.</td>
+    </tr>
+    <tr>
+      <td><strong>P3</strong></td>
+      <td><code>FIG_REAL_03</code></td>
+      <td>Sharps container — show height, angle, and position relative to phlebotomy chair.</td>
+      <td>For ergonomic reach and puncture prevention affordance.</td>
+    </tr>
+    <tr>
+      <td><strong>P4</strong></td>
+      <td><code>FIG_REAL_04</code></td>
+      <td>Public corridor bins near reception and main waiting area.</td>
+      <td>Documents visitor mental models and cross-contamination risk.</td>
+    </tr>
+    <tr>
+      <td><strong>P5</strong></td>
+      <td><code>FIG_REAL_05</code></td>
+      <td>Inside any bin lid/aperture showing polybag colour and fill level.</td>
+      <td>To check if polybag matches bin colour and assess fill volume.</td>
+    </tr>
+    <tr>
+      <td><strong>P6</strong></td>
+      <td><code>FIG_REAL_06</code></td>
+      <td>Floor plan sketch or corridor layout (rough displayed or drawn schematic).</td>
+      <td>For spatial mapping of patient transit corridors in the report.</td>
+    </tr>
+    <tr>
+      <td><strong>P7</strong></td>
+      <td><code>FIG_REAL_07</code></td>
+      <td>Any signage that feels unclear, damaged, peeling, or oddly positioned.</td>
+      <td>Direct empirical evidence of affordance and signifier failure.</td>
+    </tr>
+    <tr>
+      <td><strong>P8</strong></td>
+      <td><code>FIG_REAL_08</code></td>
+      <td>Housekeeping trolley/cart showing stocked replacement polybag rolls.</td>
+      <td>To audit whether cleaning staff possess correct color bag supplies.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="table-caption">Table 3: Structured Photographic Asset Pipeline for Final Report.</div>
+
+<div class="page-break"></div>
+
+<!-- PART C -->
+<h2>Part C — Semi-Structured Interviews: Staff Nurses & Physicians</h2>
+
+<h3>C1. Engagement Protocol & Interview Principles</h3>
+<div class="info-box">
+  <strong>Opening Script:</strong> <span class="script-quote">“Hello, good morning. We are students from IITGN conducting an academic user experience study on clinical workflows and waste management in our renovated Medical Centre. We want to understand what aspects of the renovated setup make your daily work easier and where friction or awkward workarounds still occur. Everything shared is strictly anonymous.”</span>
+</div>
+<ul>
+  <li><strong>Use “Experience” Not “Errors”:</strong> Frame inquiries around operational ease rather than compliance violations.</li>
+  <li><strong>Listen Actively:</strong> Allow respondents to complete their thought; probe with <em>“Can you tell us more about that moment?”</em></li>
+  <li><strong>Never Correct Answers:</strong> You are mapping their mental model, not administering an exam.</li>
+</ul>
+
+<h3>C2. Core Interview Questionnaire: Staff Nurses (11 Questions)</h3>
+<ol>
+  <li><strong>Tenure & Renovation Transition:</strong> “How long have you worked at this Medical Centre, including prior to the renovation? How does the overall spatial experience in this renovated layout compare to the old setup?”</li>
+  <li><strong>Workflow Integration:</strong> “Walk us through a routine clinical procedure—for example, cleaning an abrasion or drawing blood. At what exact step does waste disposal enter your thoughts?”</li>
+  <li><strong>Point-of-Disposal Decision Making:</strong> “When rushing through emergency treatment, how do you decide which bin to drop an item into? Do you read wall stickers, rely on bin body colors, or go purely by physical position?”
+    <ul>
+      <li><em>Follow-up probe:</em> “Since the facility was renovated, have you ever caught yourself walking toward an old corner expecting a bin because of habits from the old layout?”</li>
+      <li><em>Follow-up probe:</em> “Has there ever been an item where you paused for a moment, unsure which stream it belongs to?”</li>
+    </ul>
+  </li>
+  <li><strong>Frequency vs. Confidence:</strong> “Which color bin do you interact with most frequently? And which specific waste stream feels most ambiguous or confusing?”</li>
+  <li><strong>Spatial Ergonomics:</strong> “Are there moments where bins feel awkwardly positioned relative to the procedure cot? Do you have to take extra steps while carrying contaminated materials?”</li>
+  <li><strong>Capacity & Afternoon Overflows:</strong> “How often do bins reach capacity or overflow during peak hours? Is there a specific time of day (e.g., late afternoon 15:00–17:00) when fill levels spike? What workaround do you use if a bin is completely full?”</li>
+  <li><strong>Custodial Communication:</strong> “If a bin becomes full between regular cleaning rounds, how do you alert housekeeping? Do you call, walk out to find someone, or simply wait for the next scheduled sweep?”</li>
+  <li><strong>Error Experience & Recovery:</strong> “Can you describe a time when you—or a colleague during a rush—accidentally dropped an item into the wrong bin? What caused it: hurry, visual similarity, or confusing labels? How was it handled?”</li>
+  <li><strong>Feedback & Confirmation Need:</strong> “When you throw an item into a bin, do you receive any confirmation that you used the correct receptacle? Would an immediate visual indicator (such as a soft colored light pulse) provide helpful reassurance, or would it feel unnecessary?”</li>
+  <li><strong>Design Wishlist:</strong> “If you had full freedom to change one physical or layout aspect of how waste stations are set up in this room, what would be your top priority?”</li>
+  <li><strong>Training & Adaptation:</strong> “How did you learn waste segregation protocols when joining? Was there formal refresher training when the facility was renovated, or did you adapt through informal habit?”</li>
+</ol>
+
+<h3>C3. Focused Interview Questionnaire: Consulting Physicians (5 Questions)</h3>
+<ol>
+  <li><strong>Cabin Layout Ergonomics:</strong> “During consultations, how convenient is the placement of waste bins relative to your desk and patient examination bed? Does disposal interrupt patient communication?”</li>
+  <li><strong>Sharps Management:</strong> “How do you assess the positioning and height of the needle destroyer and sharps container? Does the aperture angle feel safe and natural when discarding lancets or blades?”</li>
+  <li><strong>Improvisation Under Capacity Constraints:</strong> “Have you encountered a situation where a bin in your cabin was full, forcing you to improvise or leave waste on a tray?”</li>
+  <li><strong>Multi-Material Ambiguity:</strong> “Do you encounter disposable items where the correct category feels ambiguous (e.g., packaging with medication residue)?”</li>
+  <li><strong>Visual Confirmation Feedback:</strong> “If smart bins featured subtle visual cues (e.g., an LED aperture ring matching waste colors upon approach), would that benefit clinical focus or feel like visual clutter?”</li>
+</ol>
+
+<div class="page-break"></div>
+
+<!-- PART D -->
+<h2>Part D — Semi-Structured Interviews: Housekeeping & Custodial Staff</h2>
+
+<h3>D1. Engagement Protocol & Cultural Sensitivity</h3>
+<div class="info-box">
+  <strong>Bilingual Opening Script (Hindi / Gujarati Accessible):</strong><br>
+  <span class="script-quote">“Namaste. Hum IITGN ke students hain aur renovated Medical Centre ke waste management system ka academic study kar rahe hain. Aapka kaam poore hospital safety ke liye sabse zaroori hai. Hum samajhna chahte hain ki daily collection, bag uthane, aur replacement mein aapko kya mushkilein aati hain, taaki hum design behtar karne ke suggestions de sakein.”</span>
+</div>
+
+<h3>D2. Core Custodial Questionnaire (10 Questions)</h3>
+<ol>
+  <li><strong>Daily Routine Mapping:</strong> “Can you describe your complete routine from when you start your shift until you finish your first waste collection sweep? Which rooms do you visit and in what sequence?”</li>
+  <li><strong>Schedule vs. Reality:</strong> “How many times per day do you empty the bins? Is it strictly at set times, or based on when you notice bins filling up? How often do you find a bin already overflowing before your scheduled round?”</li>
+  <li><strong>Room-Level Volume Differences:</strong> “Which specific rooms fill up the fastest? Does the Treatment Room or Minor OT fill up much quicker than Doctor Cabins? Are there bins that remain almost empty throughout the day?”</li>
+  <li><strong>Communication Bottlenecks:</strong> “If a bin becomes full between your rounds, how does nursing staff notify you? Would receiving a direct alert on your phone when a bin reaches 75% capacity make your workday easier?”</li>
+  <li><strong>Routing Logic:</strong> “How do you decide which room to clean first? Do you follow a fixed room order, or adjust your path based on past experience?”</li>
+  <li><strong>Physical Handling Strain:</strong> “Which specific bins are the heaviest or hardest to empty? Are any bins tucked into tight corners that cause back strain when lifting bags?”</li>
+  <li><strong>Polybag Stock Mismatch Trap:</strong> “When replacing bags, do you always have matching Yellow, Red, and Blue bags in stock? Has there ever been a shortage where you had to use black or clear bags inside a medical bin temporarily?”</li>
+  <li><strong>Contamination Discovery:</strong> “How often do you find wrong items inside bags—like needles in plastic bags or food waste in Yellow bags? What extra steps do you take when that occurs?”</li>
+  <li><strong>Occupational Safety & Needle Scares:</strong> “Have you ever experienced a safety scare, such as a sharp object poking through a thin bag or heavy liquid leaking during transport? Where did that happen?”</li>
+  <li><strong>Dynamic Routing System Acceptance:</strong> “If a smart system guided your rounds room-by-room based on real-time bin fullness, would you find that helpful, or would it feel like stressful monitoring?”</li>
+</ol>
+
+<!-- PART E -->
+<h2>Part E — Semi-Structured Interviews: Facility In-Charge & Administration</h2>
+
+<h3>E1. Interview Questionnaire: Administrative Superintendent (10 Questions)</h3>
+<ol>
+  <li><strong>Patient Footfall Dynamics:</strong> “What is the average daily patient footfall in this renovated facility? Which days of the week or seasonal periods experience peak volume?”</li>
+  <li><strong>Waste Surge Triggers:</strong> “What campus events trigger major surges in medical waste generation (e.g., sports festivals, campus blood donation camps, viral flu outbreaks)? How far in advance can these surges be anticipated?”</li>
+  <li><strong>Disposal Chain Tracking:</strong> “Can you outline the complete institutional chain from the moment waste is generated to its final collection by the external authorized municipal contractor?”</li>
+  <li><strong>Room Collection Frequency:</strong> “What is the official policy regarding room-level bag replacement frequency? Is it strictly clock-based or volume-driven?”</li>
+  <li><strong>Incident Reporting Protocols:</strong> “Is there a formal mechanism for staff to report bin overflows or cross-contamination incidents, or is it managed informally?”</li>
+  <li><strong>Audit & Compliance Inspections:</strong> “Have routine regulatory audits identified compliance issues related to bin placement, segregation accuracy, or storage time limits?”</li>
+  <li><strong>Staff Training Framework:</strong> “What formal onboarding or refresher training do clinical and custodial staff receive regarding biomedical waste segregation?”</li>
+  <li><strong>Recurring Errors:</strong> “What recurring segregation mistakes or misunderstandings are observed most frequently during internal reviews?”</li>
+  <li><strong>Renovation Impact:</strong> “Since completing the facility renovation, what measurable improvements in waste management have occurred? What operational friction points emerged?”</li>
+  <li><strong>Strategic Priorities:</strong> “If resources were allocated to upgrade the facility’s waste infrastructure, what would be your top operational priority?”</li>
+</ol>
+
+<div class="page-break"></div>
+
+<!-- PART F -->
+<h2>Part F — Interview Wrap-Up, Synthesis & Dynamic Probing</h2>
+
+<h3>F1. Closing Each Conversation</h3>
+<ul>
+  <li><strong>Specific Gratitude:</strong> Reference a concrete detail: <em>“Thank you especially for explaining the polybag supply situation—that gave us valuable insight into daily operational realities.”</em></li>
+  <li><strong>Snowball Referral:</strong> <em>“Is there a specific nurse or custodial colleague you recommend we speak with who has extensive experience with peak hours?”</em></li>
+  <li><strong>Follow-Up Consent:</strong> <em>“May we briefly verify a detail with you later if questions arise during our analysis?”</em></li>
+</ul>
+
+<h3>F2. Immediate 90-Minute Post-Visit Debrief Protocol</h3>
+<p>Within 90 minutes of departing the facility, execute five immediate synthesis actions:</p>
+<ol>
+  <li><strong>Floor Plan Schematic:</strong> Sketch the spatial footprint of all clinical rooms, plotting exact bin coordinates and measuring walking vectors.</li>
+  <li><strong>Observation Summary:</strong> Tally total disposal events observed, hesitation counts, and verified mis-segregation instances.</li>
+  <li><strong>Top Three Surprises:</strong> Document the three most unexpected findings that contradicted pre-visit assumptions.</li>
+  <li><strong>Verbatim Quote Transcription:</strong> Write down at least three authentic stakeholder quotes expressing operational or ergonomic frustration.</li>
+  <li><strong>Photographic Archiving:</strong> Rename captured image files to match report figure identifiers (<code>FIG_REAL_01</code> through <code>FIG_REAL_08</code>).</li>
+</ol>
+
+<h3>F3. Dynamic Probing Decision Matrix for Evasive Responses</h3>
+<table>
+  <thead>
+    <tr>
+      <th style="width: 40%;">If Staff Member Responds...</th>
+      <th>Your Strategic Follow-Up Probe</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>“We strictly follow protocols; errors never happen here.”</em></td>
+      <td>“That’s great. When new interns or temporary staff join during busy exam weeks, what is the single most common mistake they make before getting used to the layout?”</td>
+    </tr>
+    <tr>
+      <td><em>“The renovated bins are completely fine; nothing needs changing.”</em></td>
+      <td>“If you could move one bin 30 centimetres closer to your dominant hand to save a second per patient, which bin would that be?”</td>
+    </tr>
+    <tr>
+      <td><em>“Housekeeping always cleans on schedule; overflow isn’t an issue.”</em></td>
+      <td>“What about during major campus vaccination drives or seasonal viral surges—how did the bins hold up on those specific peak days?”</td>
+    </tr>
+    <tr>
+      <td><em>“The posters and stickers on the wall explain every category clearly.”</em></td>
+      <td>“If a first-year student enters triage with a bleeding cut, do they read the wall chart, or do they drop their tissue into whichever bin is closest?”</td>
+    </tr>
+    <tr>
+      <td><em>“The old facility setup was actually better in some ways.”</em></td>
+      <td>“That’s really interesting—can you tell us more about what specifically worked better in the old setup?”</td>
+    </tr>
+    <tr>
+      <td><em>“Smart IoT bins sound too complicated and fragile for a hospital.”</em></td>
+      <td>“Understood. If the tech was completely invisible—say, just a soft colored LED ring around the opening that lights up only when your hand approaches—would that help, or still feel like too much?”</td>
+    </tr>
+    <tr>
+      <td><em>“We do get some mis-segregation occasionally.”</em></td>
+      <td>“Which bin does it happen in most? And which items—plastics in sharps, or food wrappers in medical bins?”</td>
+    </tr>
+    <tr>
+      <td><em>“It’s mostly visitors who cause waste problems, not clinical staff.”</em></td>
+      <td>“Are there bins specifically designated for visitor areas? Is there anything visible that communicates acceptable disposal to non-medical visitors?”</td>
+    </tr>
+  </tbody>
+</table>
+<div class="table-caption">Table 4: Dynamic Follow-Up Probing Decision Matrix for Semi-Structured Interviews.</div>
+
+<div class="page-break"></div>
+
+<!-- PART G -->
+<h2>Part G — Fieldwork Quick-Reference Pocket Cards</h2>
+
+<h3>CARD 1: Key Quantitative Facility Metrics to Record</h3>
+<div class="info-box">
+  <div style="font-size: 8.5pt; line-height: 1.6;">
+    <span class="checkbox-box"></span> Total number of clinical rooms in renovated facility: <span class="fillable-line" style="min-width: 140px;"></span><br>
+    <span class="checkbox-box"></span> Total count of waste bins observed across all rooms: <span class="fillable-line" style="min-width: 140px;"></span><br>
+    <span class="checkbox-box"></span> Total Yellow bins: <span class="fillable-line" style="min-width: 40px;"></span> &nbsp; Red: <span class="fillable-line" style="min-width: 40px;"></span> &nbsp; Blue: <span class="fillable-line" style="min-width: 40px;"></span> &nbsp; White Sharps: <span class="fillable-line" style="min-width: 40px;"></span> &nbsp; Black: <span class="fillable-line" style="min-width: 40px;"></span><br>
+    <span class="checkbox-box"></span> Average daily patient footfall reported by administration: <span class="fillable-line" style="min-width: 140px;"></span><br>
+    <span class="checkbox-box"></span> Peak clinical rush hours identified by staff: <span class="fillable-line" style="min-width: 140px;"></span><br>
+    <span class="checkbox-box"></span> Number of internal housekeeping collection sweeps per day: <span class="fillable-line" style="min-width: 140px;"></span><br>
+    <span class="checkbox-box"></span> External contractor pickup frequency (days/week): <span class="fillable-line" style="min-width: 140px;"></span><br>
+    <span class="checkbox-box"></span> Any rooms completely lacking color-coded biomedical bins? <span class="fillable-line" style="min-width: 140px;"></span><br>
+    <span class="checkbox-box"></span> Any bins observed with incorrect color polybag liners? <span class="fillable-line" style="min-width: 140px;"></span><br>
+    <span class="checkbox-box"></span> Total discrete disposal events observed by team: <span class="fillable-line" style="min-width: 140px;"></span><br>
+    <span class="checkbox-box"></span> Number of disposal events exhibiting hesitation (&ge;2 s): <span class="fillable-line" style="min-width: 140px;"></span><br>
+    <span class="checkbox-box"></span> Number of clear cross-contamination / mis-segregation events: <span class="fillable-line" style="min-width: 140px;"></span>
+  </div>
+</div>
+
+<h3>CARD 2: Stealth AI-AMWS Validation Questions</h3>
+<p>Weave these subtle questions naturally into casual conversations to validate Group M's design innovations:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 35%;">AI-AMWS Feature Validated</th>
+      <th>Natural Conversational Probe Question</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Feature A: Peak Surge Prediction</strong></td>
+      <td>“Are there specific days or campus events when waste loads spike dramatically? Would getting an automated 24-hour advance forecast help you prepare extra bin capacity?”</td>
+    </tr>
+    <tr>
+      <td><strong>Feature B: Dynamic Bin Sizing</strong></td>
+      <td>“Does it ever happen that the Minor OT Red bin is overflowing while the Doctor Cabin Red bin next door sits almost empty? Could flexible, modular bin sizes between rooms solve that?”</td>
+    </tr>
+    <tr>
+      <td><strong>Feature C: Point-of-Disposal LED Guidance</strong></td>
+      <td>“During a stressful procedure with blood on your gloves, would color-coded glowing LED rings around the bin opening guide your hand faster than reading wall signs?”</td>
+    </tr>
+    <tr>
+      <td><strong>Feature D: Custodial Smart Dispatch</strong></td>
+      <td>“For cleaning staff: would a simple phone checklist showing only the rooms that actually need clearing right now save you unnecessary walking rounds?”</td>
+    </tr>
+    <tr>
+      <td><strong>Admin Dashboard Analytics</strong></td>
+      <td>“Would a facility-wide live screen showing room-by-room fill percentages and contamination warning logs assist daily management?”</td>
+    </tr>
+  </tbody>
+</table>
+<div class="table-caption">Table 5: Conversational Stealth Validation Probes for AI-AMWS Features.</div>
+
+<h3>CARD 3: In-Situ Behavioral Signals — Good UX vs. UX Breakdown</h3>
+<table>
+  <thead>
+    <tr>
+      <th style="width: 50%;">Positive UX Signal (Intuitive Affordance)</th>
+      <th>UX Breakdown Signal (Cognitive / Ergonomic Failure)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Staff discard waste smoothly without glancing at labels.</td>
+      <td>Staff pause, read labels, or tilt heads before dropping waste.</td>
+    </tr>
+    <tr>
+      <td>Bins visible immediately upon entering the clinical room.</td>
+      <td>Bins hidden behind curtains, inward-swinging doors, or desks.</td>
+    </tr>
+    <tr>
+      <td>Bin located within arm's reach (&le;1.2 m) of procedure table.</td>
+      <td>Staff must take &gt;3 steps carrying contaminated items across room.</td>
+    </tr>
+    <tr>
+      <td>Polybag color perfectly matches the receptacle's category.</td>
+      <td>Mismatched, clear, or black municipal bags used in medical bins.</td>
+    </tr>
+    <tr>
+      <td>Sharps container mounted securely at chest/elbow level.</td>
+      <td>Sharps container placed on the floor or balanced precariously on cots.</td>
+    </tr>
+    <tr>
+      <td>Signage features high-contrast bilingual pictograms.</td>
+      <td>Signage consists of faded English-only text or peeling markers.</td>
+    </tr>
+    <tr>
+      <td>Foot pedal operates smoothly with light downward foot pressure.</td>
+      <td>Stiff, sticking, or broken pedals forcing staff to use gloved hands.</td>
+    </tr>
+    <tr>
+      <td>Bin bodies stand out clearly against wall and tile backgrounds.</td>
+      <td>Bins visually blend into surrounding wall paint or floor tiles.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="table-caption">Table 6: In-Situ Observational Checklist: Positive Indicators vs. Failure Modes.</div>
+
+<div style="text-align: center; margin-top: 20pt; font-size: 8pt; color: #6c757d; border-top: 0.5pt solid #ccc; padding-top: 5pt;">
+  <strong>Group M · Foundations of User Experience (FUX 2026–2027) · Indian Institute of Technology Gandhinagar</strong><br>
+  <em>Fieldwork Research Instrument · Strictly for Academic Research Purposes · Do Not Distribute or Leave Unattended</em>
+</div>
+
+</body>
+</html>

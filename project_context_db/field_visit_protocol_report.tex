@@ -1,0 +1,496 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- Core Geometry and Typography ---
+\usepackage[top=20mm, bottom=20mm, left=18mm, right=18mm, headheight=14pt, footskip=10mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amssymb}
+
+% --- Color Palette ---
+\usepackage[table,xcdraw]{xcolor}
+\definecolor{iitblue}{RGB}{14, 43, 92}
+\definecolor{iitaccent}{RGB}{204, 138, 24}
+\definecolor{darkcharcoal}{RGB}{33, 37, 41}
+\definecolor{softgray}{RGB}{248, 249, 250}
+\definecolor{bordergray}{RGB}{222, 226, 230}
+\definecolor{bmwyellow}{RGB}{230, 172, 0}
+\definecolor{bmwred}{RGB}{198, 40, 40}
+\definecolor{bmwblue}{RGB}{21, 101, 192}
+\definecolor{bmwblack}{RGB}{40, 40, 40}
+\definecolor{bmwwhite}{RGB}{100, 116, 139}
+\definecolor{alertred}{RGB}{185, 28, 28}
+\definecolor{alertbg}{RGB}{254, 242, 242}
+\definecolor{infobg}{RGB}{240, 244, 248}
+
+% --- Tables and Visuals ---
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{pifont}
+\usepackage{mdframed}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% --- Hyperlinks ---
+\usepackage[
+    colorlinks=true,
+    linkcolor=iitblue,
+    urlcolor=iitblue,
+    citecolor=iitaccent,
+    pdfauthor={Group M, Foundations of User Experience, IITGN},
+    pdftitle={IITGN Medical Centre Field Visit Protocol and Ethnographic Inquiry Guide}
+]{hyperref}
+
+% --- Header and Footer Styling ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{darkcharcoal}\textbf{IITGN Medical Centre} $\cdot$ Fieldwork Protocol \& UX Instrument}
+\fancyhead[R]{\small\color{darkcharcoal}\textbf{Group M} $\cdot$ Topic 10: Medical Waste}
+\fancyfoot[L]{\footnotesize\color{darkcharcoal}Foundations of User Experience (FUX 2026--2027)}
+\fancyfoot[C]{\footnotesize\color{darkcharcoal}Page \thepage\ of \pageref{LastPage}}
+\fancyfoot[R]{\footnotesize\color{darkcharcoal}IIT Gandhinagar}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% --- Section Styling ---
+\titleformat{\section}
+  {\color{iitblue}\Large\bfseries}
+  {\thesection}{1em}{}[\titlerule]
+\titleformat{\subsection}
+  {\color{iitblue}\large\bfseries}
+  {\thesubsection}{0.8em}{}
+\titleformat{\subsubsection}
+  {\color{darkcharcoal}\normalsize\bfseries}
+  {\thesubsubsection}{0.6em}{}
+
+% --- Custom Mdframed Boxes ---
+\newmdenv[
+    backgroundcolor=infobg,
+    linecolor=iitblue,
+    linewidth=1.2pt,
+    innertopmargin=8pt,
+    innerbottommargin=8pt,
+    innerleftmargin=10pt,
+    innerrightmargin=10pt,
+    roundcorner=3pt
+]{infobox}
+
+\newmdenv[
+    backgroundcolor=alertbg,
+    linecolor=alertred,
+    linewidth=1.2pt,
+    innertopmargin=8pt,
+    innerbottommargin=8pt,
+    innerleftmargin=10pt,
+    innerrightmargin=10pt,
+    roundcorner=3pt
+]{alertbox}
+
+\newcommand{\checkbox}{$\square$\ }
+
+\begin{document}
+
+% ==============================================================================
+% TITLE & MASTHEAD
+% ==============================================================================
+\begin{center}
+    {\large\scshape Indian Institute of Technology Gandhinagar}\\[3pt]
+    {\small\textbf{Foundations of User Experience (FUX) $\cdot$ Semester 1, 2026--2027}}\\[2pt]
+    {\footnotesize Course Instructor: Prof. Nuno M. Guimar\~aes (\texttt{nuno.guimaraes@iitgn.ac.in})}\\[10pt]
+    
+    \begin{mdframed}[linecolor=iitblue, linewidth=1.5pt, backgroundcolor=softgray, roundcorner=4pt, innertopmargin=10pt, innerbottommargin=10pt]
+        \centering
+        {\LARGE\bfseries\color{iitblue} Fieldwork Protocol \& Ethnographic Inquiry Guide}\\[4pt]
+        {\large\bfseries Comparative UX Evaluation \& Intelligent System Feasibility Assessment}\\[3pt]
+        {\small\color{darkcharcoal}\textbf{Topic 10: Medical Waste Management} $\cdot$ Renovated IITGN Medical Centre Facility}
+    \end{mdframed}
+    \vspace{4pt}
+    {\footnotesize \textbf{Author Group:} Group M \quad$\vert$\quad \textbf{Classification:} Fieldwork Research Instrument \quad$\vert$\quad \textbf{Version:} 2.1 (Comprehensive Protocol) \quad$\vert$\quad \textbf{Date:} November 2026}
+\end{center}
+
+\vspace{4pt}
+
+\begin{infobox}
+\noindent\textbf{\color{iitblue}Executive Overview \& Pedagogical Mandate:}  
+This document serves as the formal operational instrument, observational guide, and multi-stakeholder interview manual for Group~M's field research at the recently renovated IIT Gandhinagar (IITGN) Medical Centre. It directly fulfills the academic criteria of \textbf{Direction~(a)} (comparative user experience evaluation of an active socio-technical facility) and \textbf{Direction~(b)} (evaluative grounding for the \emph{AI-Powered Adaptive Medical Waste System, AI-AMWS}). This guide combines high-level cognitive engineering frameworks with granular, printable field recording sheets, verbatim interview scripts, dynamic probing decision trees, and validation probes.
+\end{infobox}
+
+% ==============================================================================
+% PART A: BEFORE YOU GO
+% ==============================================================================
+\section{Part A --- Pre-Fieldwork Context \& Theoretical Foundation}
+
+\subsection{A1. Investigation Context: Why This Visit Matters}
+The IITGN Medical Centre recently completed a major architectural and interior renovation of its existing facility. In healthcare human factors, facility renovations represent a critical phenomenon: while the building shell remains familiar, altered room partitions, relocated supply stations, new wall paint, and shifted bin positions disrupt established staff muscle memory. 
+The field investigation pursues two parallel objectives:
+\begin{itemize}[leftmargin=*, nosep]
+    \item \textbf{Objective 1 (Empirical Reality Mapping):} Document the post-renovation setup: physical bin placements, room clearances, luminance contrast, and authentic user behaviors (slips, hesitations, workarounds).
+    \item \textbf{Objective 2 (AI-AMWS Grounding):} Gather concrete operational evidence (peak surges, cross-room capacity imbalances, custodial travel delays) to justify the four innovations of Group~M's original design proposal.
+\end{itemize}
+
+\subsection{A2. Pre-Renovation Baseline Knowledge (Internal Dataset --- Do NOT Mention to Staff)}
+The pre-renovation facility setup revealed eight documented failure points. These serve as your silent baseline checklist:
+
+\begin{table}[h!]
+\centering
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{p{6.8cm}X}
+\toprule
+\rowcolor{iitblue}
+\color{white}\textbf{Documented Pre-Renovation Problem (Baseline)} & \color{white}\textbf{What to Verify in Renovated Facility} \\
+\midrule
+Yellow \& Red bins blended into cream/beige tiles (contrast ratio $<2.5:1$). & Has new wall paint or tile finish improved luminance contrast? Do bins pop visually? \\
+\rowcolor{softgray}
+Faded stickers, peeling labels, and handwritten polybag markers. & Are stickers professionally printed, standardized, and scratch/disinfectant-resistant? \\
+Treatment Room bins suffered severe overflows between 15:00 and 17:00 daily. & Are bin capacities tailored to room-specific procedural volumes, or still uniform? \\
+\rowcolor{softgray}
+Clinicians hesitated 2--4 seconds at bins under procedural rush. & Is decision latency observed in the renovated layout? Does ambiguity persist? \\
+Sharps container mounted at awkward angles causing puncture hazards. & Is the sharps destroyer/box mounted at natural eye/elbow level near the phlebotomy chair? \\
+\rowcolor{softgray}
+Visitors and patients routinely threw food wrappers into medical Yellow bins. & Does the renovated waiting area physically separate general and clinical waste? \\
+Housekeeping had no fill notifications; operated on rigid clock-based rounds. & Has collection scheduling modernized, or does cleaning staff still rely on guesswork? \\
+\rowcolor{softgray}
+Bins placed in far room corners, requiring 180$^\circ$ turns and walking across rooms. & Are bins positioned within arm's reach of examination tables and dressing carts? \\
+\bottomrule
+\end{tabularx}
+\caption{Pre-Renovation Baseline Failures vs.\ In-Situ Verification Targets.}
+\end{table}
+
+\subsection{A3. CPCB Regulatory Bio-Medical Waste Standards (India 2016 Rules)}
+Every receptacle must be inspected against the official regulatory schedules:
+\begin{itemize}[leftmargin=*, nosep]
+    \item \textbf{\color{bmwyellow}Yellow Bin (Pathological \& Soiled):} Anatomical tissue, soiled cotton dressings, gauze, plaster casts, expired medicines. \emph{Common Slips:} Food wrappers, coffee cups, or general plastic wrapping tossed in.
+    \item \textbf{\color{bmwred}Red Bin (Contaminated Recyclable Plastics):} Disposable gloves, IV tubing, urine bags, catheters, needle-less plastic syringes. \emph{Common Slips:} Needles left attached to syringes; glass ampoules thrown in.
+    \item \textbf{\color{bmwblue}Blue Bin (Glassware \& Metal Implants):} Medicine ampoules, glass vials, broken glassware, orthopedic metal pins. \emph{Common Slips:} Syringe plastic barrels, general non-glass trash.
+    \item \textbf{\color{bmwwhite}White/Translucent Container (Sharps):} Hypodermic needles, scalpels, surgical blades, contaminated lancets. \emph{Common Slips:} Cotton swabs or plastic caps forced into narrow apertures.
+    \item \textbf{\color{bmwblack}Black / Green Bin (General Solid Waste):} Office paper, food remnants, cardboard packaging. \emph{Common Slips:} Blood-stained bandages or used clinical gloves.
+\end{itemize}
+
+\subsection{A4. Theoretical HCI Concepts Applied to Field Observation}
+\begin{itemize}[leftmargin=*, nosep]
+    \item \textbf{Don Norman's Action Cycle:} Examine the \emph{Gulf of Execution} (mental effort needed to translate intent into selecting the correct receptacle) and the \emph{Gulf of Evaluation} (total absence of confirmation feedback post-disposal). Evaluate \emph{Affordances} (do bin openings communicate item types?), \emph{Signifiers} (clarity of color codes and pictograms), and \emph{Spatial Mapping} (proximity to procedural workstations).
+    \item \textbf{Rasmussen's SRK Framework:} Differentiate \emph{Skill-based slips} (experienced nurses on autopilot discarding gloves into wrong bins), \emph{Rule-based mistakes} (confusing plastics vs.\ sharps rules for combo devices), and \emph{Knowledge-based errors} (untrained patients/visitors).
+    \item \textbf{Reason's Swiss Cheese Model:} Analyze how latent systemic flaws (poor task lighting, camouflaging wall paint, stock shortages of red bags) align with clinician fatigue to cause safety breakdowns.
+\end{itemize}
+
+\begin{alertbox}
+\noindent\textbf{\color{alertred}\ding{52} MANDATORY ETHICAL DIRECTIVES \& BIOSAFETY RULES}
+\begin{itemize}[leftmargin=*, nosep]
+    \item \textbf{Absolute Zero Contact:} Under no circumstances touch, open, handle, or sort bio-medical waste bags.
+    \item \textbf{Facial Anonymity:} Photograph only physical hardware, wall contrast, and floor layouts. Never photograph patient or staff faces.
+    \item \textbf{Non-Disruption:} Clinical procedures take 100\% precedence. If emergency care begins, immediately withdraw.
+\end{itemize}
+\end{alertbox}
+
+% ==============================================================================
+% PART B: SILENT OBSERVATION & AUDIT
+% ==============================================================================
+\section{Part B --- Silent Observation \& Structured Audit Protocol}
+
+Spend the initial 60--90 minutes conducting silent, non-intrusive data collection prior to initiating staff interviews.
+
+\subsection{B1. Room-by-Room Environmental \& Bin Inventory Form}
+\emph{Print or copy this template for each functional room visited (Triage, OPD 1--3, Minor OT, Sample Room, Pharmacy, Waiting Lounge):}
+
+\begin{infobox}
+\small
+\noindent\textbf{Room Name:} \hrulefill \quad \textbf{Room Function:} \hrulefill \quad \textbf{Time Audited:} \hrulefill\\[4pt]
+\textbf{Receptacles Present \& Visual State:}\\
+\checkbox \textbf{Yellow Bin:} \quad Condition: \hrulefill \quad Wall Color Behind Bin: \hrulefill\\
+\checkbox \textbf{Red Bin:} \quad\quad Condition: \hrulefill \quad Wall Color Behind Bin: \hrulefill\\
+\checkbox \textbf{Blue Bin:} \quad\quad Condition: \hrulefill \quad Wall Color Behind Bin: \hrulefill\\
+\checkbox \textbf{White Sharps:} \ Condition: \hrulefill \quad Mounted On: \checkbox Wall Bracket \ \checkbox Trolley Cart \ \checkbox Floor\\
+\checkbox \textbf{Black General:} Condition: \hrulefill \quad Wall Color Behind Bin: \hrulefill\\[4pt]
+\textbf{Lighting Assessment:} \checkbox Natural Daylight \quad \checkbox Overhead LED Panel \quad \checkbox Fluorescent Tube \quad \checkbox Mixed\\
+Illumination Quality at Bin Aperture: \checkbox Bright / High Visibility \quad \checkbox Adequate \quad \checkbox Shadow Zone / Dim\\[4pt]
+\textbf{Spatial \& Mechanical Ergonomics:}\\
+$\bullet$ Distance from procedure examination cot to nearest clinical bin: \hrulefill\ metres / \hrulefill\ steps\\
+$\bullet$ Is the bin cluster visible from the procedure point without turning around? \checkbox Yes \quad \checkbox No\\
+$\bullet$ Does the bin have a functional foot pedal? \checkbox Yes \quad \checkbox No \quad Condition: \checkbox Smooth \quad \checkbox Stiff \quad \checkbox Broken / Jammed\\[4pt]
+\textbf{Signage \& Affordance Clarity:}\\
+$\bullet$ Signage Type: \checkbox No Signage \quad \checkbox Handwritten Marker \quad \checkbox Printed Poster on Wall \quad \checkbox Label on Bin Body\\
+$\bullet$ Languages: \checkbox English Only \quad \checkbox Bilingual (English + Gujarati/Hindi) \quad \checkbox Visual Pictograms Included\\
+$\bullet$ Mis-Segregation Evident Inside Bag: \checkbox None \quad \checkbox Occasional ($\le 2$ items) \quad \checkbox Severe Contamination\\
+$\bullet$ Observed Contaminants: \hrulefill
+\end{infobox}
+
+\subsection{B2. Naturalistic Disposal Event Observation Tally Sheet}
+Log a minimum of 25--30 distinct disposal actions. Note: \textbf{Hesitation} = pause $\ge 2$ seconds. \textbf{Head-Turn} = user inspects label or looks inside bag prior to dropping waste.
+
+\begin{table}[h!]
+\centering
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{|c|c|l|l|c|c|c|X|}
+\hline
+\rowcolor{iitblue}
+\color{white}\textbf{\#} & \color{white}\textbf{Time} & \color{white}\textbf{Room / Zone} & \color{white}\textbf{Staff Role} & \color{white}\textbf{Hesitate?} & \color{white}\textbf{Head-Turn?} & \color{white}\textbf{Outcome} & \color{white}\textbf{Disposal Context \& Item Type} \\
+\hline
+1 & & & Dr / Nu / HK / Pa & Y / N & Y / N & Correct / Slip & \\ \hline
+2 & & & Dr / Nu / HK / Pa & Y / N & Y / N & Correct / Slip & \\ \hline
+3 & & & Dr / Nu / HK / Pa & Y / N & Y / N & Correct / Slip & \\ \hline
+4 & & & Dr / Nu / HK / Pa & Y / N & Y / N & Correct / Slip & \\ \hline
+5 & & & Dr / Nu / HK / Pa & Y / N & Y / N & Correct / Slip & \\ \hline
+6 & & & Dr / Nu / HK / Pa & Y / N & Y / N & Correct / Slip & \\ \hline
+7 & & & Dr / Nu / HK / Pa & Y / N & Y / N & Correct / Slip & \\ \hline
+8 & & & Dr / Nu / HK / Pa & Y / N & Y / N & Correct / Slip & \\ \hline
+9 & & & Dr / Nu / HK / Pa & Y / N & Y / N & Correct / Slip & \\ \hline
+10 & & & Dr / Nu / HK / Pa & Y / N & Y / N & Correct / Slip & \\ \hline
+\end{tabularx}
+\caption{Disposal Action Field Observation Protocol and Tally Log.}
+\end{table}
+
+\subsection{B3. Photographic Documentation Protocol (8 Target Shots)}
+Capture these eight photographic assets prior to interviews while the clinical environment is undisturbed:
+
+\begin{table}[h!]
+\centering
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{llp{7.5cm}X}
+\toprule
+\rowcolor{iitblue}
+\color{white}\textbf{Shot ID} & \color{white}\textbf{LaTeX Tag} & \color{white}\textbf{Scene Framing \& Composition} & \color{white}\textbf{Analytical UX Purpose} \\
+\midrule
+\textbf{P1} & \texttt{FIG\_REAL\_01} & Wide-angle shot of Triage room showing examination cot and surrounding bin cluster. & Evaluates physical reach, foot clearance, and walking distance. \\
+\rowcolor{softgray}
+\textbf{P2} & \texttt{FIG\_REAL\_02} & Full-frame close-up of wall-mounted segregation posters and background paint. & Assesses luminance contrast, legibility, and language hierarchy. \\
+\textbf{P3} & \texttt{FIG\_REAL\_03} & Sharps container mounting relative to phlebotomy chair and doctor reach height. & Analyzes puncture prevention affordance and reach ergonomics. \\
+\rowcolor{softgray}
+\textbf{P4} & \texttt{FIG\_REAL\_04} & Public corridor waste station located near the main reception and waiting lobby. & Documents visitor affordances and cross-contamination traps. \\
+\textbf{P5} & \texttt{FIG\_REAL\_05} & Top-down view into open bin aperture showing polybag color and fill level. & Checks for polybag-to-bin color mismatch and fill volume. \\
+\rowcolor{softgray}
+\textbf{P6} & \texttt{FIG\_REAL\_06} & Hand-drawn or displayed floor plan schematic showing patient transit corridors. & Maps spatial circulation and bin accessibility across rooms. \\
+\textbf{P7} & \texttt{FIG\_REAL\_07} & Close-up of any damaged, peeling, ambiguous, or poorly positioned signage. & Provides concrete empirical evidence of affordance breakdown. \\
+\rowcolor{softgray}
+\textbf{P8} & \texttt{FIG\_REAL\_08} & Housekeeping collection trolley showing stocked replacement polybag rolls. & Audits whether cleaning staff possess correct color bag supplies. \\
+\bottomrule
+\end{tabularx}
+\caption{Structured Photographic Asset Pipeline for Final Report.}
+\end{table}
+
+% ==============================================================================
+% PART C: CLINICAL STAFF INTERVIEWS
+% ==============================================================================
+\section{Part C --- Semi-Structured Interviews: Staff Nurses \& Physicians}
+
+\subsection{C1. Engagement Protocol \& Interview Principles}
+\begin{infobox}
+\textbf{Opening Script:} \emph{``Hello, good morning/afternoon. We are students from IITGN conducting an academic user experience study on clinical workflows and waste management in our renovated Medical Centre. We want to understand what aspects of the renovated setup make your daily work easier and where friction or awkward workarounds still occur. Everything shared is strictly anonymous.''}
+\end{infobox}
+\begin{itemize}[leftmargin=*, nosep]
+    \item \textbf{Use ``Experience'' Not ``Errors'':} Frame inquiries around operational ease rather than compliance violations.
+    \item \textbf{Listen Actively:} Allow respondents to complete their thought; probe with \emph{``Can you tell us more about that moment?''}
+    \item \textbf{Never Correct Answers:} You are mapping their mental model, not administering an exam.
+\end{itemize}
+
+\subsection{C2. Core Interview Questionnaire: Staff Nurses (11 Questions)}
+\begin{enumerate}[leftmargin=*, itemsep=3pt]
+    \item \textbf{Tenure \& Renovation Transition:} \emph{``How long have you worked at this Medical Centre, including prior to the renovation? How does the overall spatial experience in this renovated layout compare to the old setup?''}
+    \item \textbf{Workflow Integration:} \emph{``Walk us through a routine clinical procedure---for example, cleaning an abrasion or drawing blood. At what exact step does waste disposal enter your thoughts?''}
+    \item \textbf{Point-of-Disposal Decision Making:} \emph{``When rushing through emergency treatment, how do you decide which bin to drop an item into? Do you read wall stickers, rely on bin body colors, or go purely by physical position?''}
+        \begin{itemize}[nosep]
+            \item \emph{Follow-up probe:} \emph{``Since the facility was renovated, have you ever caught yourself walking toward an old corner expecting a bin because of habits from the old layout?''}
+            \item \emph{Follow-up probe:} \emph{``Has there ever been an item where you paused for a moment, unsure which stream it belongs to?''}
+        \end{itemize}
+    \item \textbf{Frequency vs.\ Confidence:} \emph{``Which color bin do you interact with most frequently? And which specific waste stream feels most ambiguous or confusing?''}
+    \item \textbf{Spatial Ergonomics:} \emph{``Are there moments where bins feel awkwardly positioned relative to the procedure cot? Do you have to take extra steps while carrying contaminated materials?''}
+    \item \textbf{Capacity \& Afternoon Overflows:} \emph{``How often do bins reach capacity or overflow during peak hours? Is there a specific time of day (e.g., late afternoon) when fill levels spike? What workaround do you use if a bin is completely full?''}
+    \item \textbf{Custodial Communication:} \emph{``If a bin becomes full between regular cleaning rounds, how do you alert housekeeping? Do you call, walk out to find someone, or simply wait for the next scheduled sweep?''}
+    \item \textbf{Error Experience \& Recovery:} \emph{``Can you describe a time when you---or a colleague during a rush---accidentally dropped an item into the wrong bin? What caused it: hurry, visual similarity, or confusing labels? How was it handled?''}
+    \item \textbf{Feedback \& Confirmation Need:} \emph{``When you throw an item into a bin, do you receive any confirmation that you used the correct receptacle? Would an immediate visual indicator (such as a soft colored light pulse) provide helpful reassurance, or would it feel unnecessary?''}
+    \item \textbf{Design Wishlist:} \emph{``If you had full freedom to change one physical or layout aspect of how waste stations are set up in this room, what would be your top priority?''}
+    \item \textbf{Training \& Adaptation:} \emph{``How did you learn waste segregation protocols when joining? Was there formal refresher training when the facility was renovated, or did you adapt through informal habit?''}
+\end{enumerate}
+
+\subsection{C3. Focused Interview Questionnaire: Consulting Physicians (5 Questions)}
+\begin{enumerate}[leftmargin=*, itemsep=3pt]
+    \item \textbf{Cabin Layout Ergonomics:} \emph{``During consultations, how convenient is the placement of waste bins relative to your desk and patient examination bed? Does disposal interrupt patient communication?''}
+    \item \textbf{Sharps Management:} \emph{``How do you assess the positioning and height of the needle destroyer and sharps container? Does the aperture angle feel safe and natural when discarding lancets or blades?''}
+    \item \textbf{Improvisation Under Capacity Constraints:} \emph{``Have you encountered a situation where a bin in your cabin was full, forcing you to improvise or leave waste on a tray?''}
+    \item \textbf{Multi-Material Ambiguity:} \emph{``Do you encounter disposable items where the correct category feels ambiguous (e.g., packaging with medication residue)?''}
+    \item \textbf{Visual Confirmation Feedback:} \emph{``If smart bins featured subtle visual cues (e.g., an LED aperture ring matching waste colors upon approach), would that benefit clinical focus or feel like visual clutter?''}
+\end{enumerate}
+
+% ==============================================================================
+% PART D: HOUSEKEEPING STAFF INTERVIEWS
+% ==============================================================================
+\section{Part D --- Semi-Structured Interviews: Housekeeping \& Custodial Staff}
+
+\subsection{D1. Engagement Protocol \& Cultural Sensitivity}
+\begin{infobox}
+\textbf{Bilingual Opening Phrasing (Hindi / Gujarati Accessible):}\\
+\emph{``Namaste. Hum IITGN ke students hain aur renovated Medical Centre ke waste management system ka academic study kar rahe hain. Aapka kaam poore hospital safety ke liye sabse zaroori hai. Hum samajhna chahte hain ki daily collection, bag uthane, aur replacement mein aapko kya mushkilein aati hain, taaki hum design behtar karne ke suggestions de sakein.''}
+\end{infobox}
+
+\subsection{D2. Core Custodial Questionnaire (10 Questions)}
+\begin{enumerate}[leftmargin=*, itemsep=3pt]
+    \item \textbf{Daily Routine Mapping:} \emph{``Can you describe your complete routine from when you start your shift until you finish your first waste collection sweep? Which rooms do you visit and in what sequence?''}
+    \item \textbf{Schedule vs.\ Reality:} \emph{``How many times per day do you empty the bins? Is it strictly at set times, or based on when you notice bins filling up? How often do you find a bin already overflowing before your scheduled round?''}
+    \item \textbf{Room-Level Volume Differences:} \emph{``Which specific rooms fill up the fastest? Does the Treatment Room or Minor OT fill up much quicker than Doctor Cabins? Are there bins that remain almost empty throughout the day?''}
+    \item \textbf{Communication Bottlenecks:} \emph{``If a bin becomes full between your rounds, how does nursing staff notify you? Would receiving a direct alert on your phone when a bin reaches 75\% capacity make your workday easier?''}
+    \item \textbf{Routing Logic:} \emph{``How do you decide which room to clean first? Do you follow a fixed room order, or adjust your path based on past experience?''}
+    \item \textbf{Physical Handling Strain:} \emph{``Which specific bins are the heaviest or hardest to empty? Are any bins tucked into tight corners that cause back strain when lifting bags?''}
+    \item \textbf{Polybag Stock Mismatch Trap:} \emph{``When replacing bags, do you always have matching Yellow, Red, and Blue bags in stock? Has there ever been a shortage where you had to use black or clear bags inside a medical bin temporarily?''}
+    \item \textbf{Contamination Discovery:} \emph{``How often do you find wrong items inside bags---like needles in plastic bags or food waste in Yellow bags? What extra steps do you take when that occurs?''}
+    \item \textbf{Occupational Safety \& Needle Scares:} \emph{``Have you ever experienced a safety scare, such as a sharp object poking through a thin bag or heavy liquid leaking during transport? Where did that happen?''}
+    \item \textbf{Dynamic Routing System Acceptance:} \emph{``If a smart system guided your rounds room-by-room based on real-time bin fullness, would you find that helpful, or would it feel like stressful monitoring?''}
+\end{enumerate}
+
+% ==============================================================================
+% PART E: ADMINISTRATIVE INTERVIEWS
+% ==============================================================================
+\section{Part E --- Semi-Structured Interviews: Facility In-Charge \& Administration}
+
+\subsection{E1. Interview Questionnaire: Administrative Superintendent (10 Questions)}
+\begin{enumerate}[leftmargin=*, itemsep=3pt]
+    \item \textbf{Patient Footfall Dynamics:} \emph{``What is the average daily patient footfall in this renovated facility? Which days of the week or seasonal periods experience peak volume?''}
+    \item \textbf{Waste Surge Triggers:} \emph{``What campus events trigger major surges in medical waste generation (e.g., sports festivals, campus blood donation camps, viral flu outbreaks)? How far in advance can these surges be anticipated?''}
+    \item \textbf{Disposal Chain Tracking:} \emph{``Can you outline the complete institutional chain from the moment waste is generated to its final collection by the external authorized municipal contractor?''}
+    \item \textbf{Room Collection Frequency:} \emph{``What is the official policy regarding room-level bag replacement frequency? Is it strictly clock-based or volume-driven?''}
+    \item \textbf{Incident Reporting Protocols:} \emph{``Is there a formal mechanism for staff to report bin overflows or cross-contamination incidents, or is it managed informally?''}
+    \item \textbf{Audit \& Compliance Inspections:} \emph{``Have routine regulatory audits identified compliance issues related to bin placement, segregation accuracy, or storage time limits?''}
+    \item \textbf{Staff Training Framework:} \emph{``What formal onboarding or refresher training do clinical and custodial staff receive regarding biomedical waste segregation?''}
+    \item \textbf{Recurring Errors:} \emph{``What recurring segregation mistakes or misunderstandings are observed most frequently during internal reviews?''}
+    \item \textbf{Renovation Impact:} \emph{``Since completing the facility renovation, what measurable improvements in waste management have occurred? What operational friction points emerged?''}
+    \item \textbf{Strategic Priorities:} \emph{``If resources were allocated to upgrade the facility's waste infrastructure, what would be your top operational priority?''}
+\end{enumerate}
+
+% ==============================================================================
+% PART F: CLOSING PROTOCOL & DECISION TREES
+% ==============================================================================
+\section{Part F --- Interview Wrap-Up, Synthesis \& Dynamic Probing}
+
+\subsection{F1. Closing Each Conversation}
+Always conclude interviews with three essential actions:
+\begin{itemize}[leftmargin=*, nosep]
+    \item \textbf{Specific Gratitude:} Reference a concrete detail: \emph{``Thank you especially for explaining the polybag supply situation---that gave us valuable insight into daily operational realities.''}
+    \item \textbf{Snowball Referral:} \emph{``Is there a specific nurse or custodial colleague you recommend we speak with who has extensive experience with peak hours?''}
+    \item \textbf{Follow-Up Consent:} \emph{``May we briefly verify a detail with you later if questions arise during our analysis?''}
+\end{itemize}
+
+\subsection{F2. Immediate 90-Minute Post-Visit Debrief Protocol}
+Within 90 minutes of departing the facility, execute five immediate synthesis actions:
+\begin{enumerate}[leftmargin=*, nosep]
+    \item \textbf{Floor Plan Schematic:} Sketch the spatial footprint of all clinical rooms, plotting exact bin coordinates and measuring walking vectors.
+    \item \textbf{Observation Summary:} Tally total disposal events observed, hesitation counts, and verified mis-segregation instances.
+    \item \textbf{Top Three Surprises:} Document the three most unexpected findings that contradicted pre-visit assumptions.
+    \item \textbf{Verbatim Quote Transcription:} Write down at least three authentic stakeholder quotes expressing operational or ergonomic frustration.
+    \item \textbf{Photographic Archiving:} Rename captured image files to match report figure identifiers (\texttt{FIG\_REAL\_01} through \texttt{FIG\_REAL\_08}).
+\end{enumerate}
+
+\subsection{F3. Dynamic Probing Decision Matrix for Evasive Responses}
+\begin{table}[h!]
+\centering
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{p{5.5cm}X}
+\toprule
+\rowcolor{iitblue}
+\color{white}\textbf{If Staff Member Responds...} & \color{white}\textbf{Your Strategic Follow-Up Probe} \\
+\midrule
+\emph{``We strictly follow protocols; errors never happen here.''} & \emph{``That's great. When new interns or temporary staff join during busy exam weeks, what is the single most common mistake they make before getting used to the layout?''} \\
+\rowcolor{softgray}
+\emph{``The renovated bins are completely fine; nothing needs changing.''} & \emph{``If you could move one bin 30 centimetres closer to your dominant hand to save a second per patient, which bin would that be?''} \\
+\emph{``Housekeeping always cleans on schedule; overflow isn't an issue.''} & \emph{``What about during major campus vaccination drives or seasonal viral surges---how did the bins hold up on those specific peak days?''} \\
+\rowcolor{softgray}
+\emph{``The posters and stickers on the wall explain every category clearly.''} & \emph{``If a first-year student enters triage with a bleeding cut, do they read the wall chart, or do they drop their tissue into whichever bin is closest?''} \\
+\emph{``The old facility setup was actually better in some ways.''} & \emph{``That's really interesting---can you tell us more about what specifically worked better in the old setup?''} \\
+\rowcolor{softgray}
+\emph{``Smart IoT bins sound too complicated and fragile for a hospital.''} & \emph{``Understood. If the tech was completely invisible---say, just a soft colored LED ring around the opening that lights up only when your hand approaches---would that help, or still feel like too much?''} \\
+\emph{``We do get some mis-segregation occasionally.''} & \emph{``Which bin does it happen in most? And which items---plastics in sharps, or food wrappers in medical bins?''} \\
+\rowcolor{softgray}
+\emph{``It's mostly visitors who cause waste problems, not clinical staff.''} & \emph{``Are there bins specifically designated for visitor areas? Is there anything visible that communicates acceptable disposal to non-medical visitors?''} \\
+\bottomrule
+\end{tabularx}
+\caption{Dynamic Follow-Up Probing Decision Matrix for Semi-Structured Interviews.}
+\end{table}
+
+% ==============================================================================
+% PART G: TEAR-OUT REFERENCE CARDS
+% ==============================================================================
+\section{Part G --- Fieldwork Quick-Reference Pocket Cards}
+
+\subsection{CARD 1: Key Quantitative Facility Metrics to Record}
+\begin{infobox}
+\small
+\begin{tabularx}{\textwidth}{Xl}
+$\square$ Total number of clinical rooms in renovated facility: & \rule{3cm}{0.4pt} \\
+$\square$ Total count of waste bins observed across all rooms: & \rule{3cm}{0.4pt} \\
+$\square$ Total Yellow bins: \rule{1cm}{0.4pt} \quad Red: \rule{1cm}{0.4pt} \quad Blue: \rule{1cm}{0.4pt} \quad White Sharps: \rule{1cm}{0.4pt} \quad Black: \rule{1cm}{0.4pt} & \\
+$\square$ Average daily patient footfall reported by administration: & \rule{3cm}{0.4pt} \\
+$\square$ Peak clinical rush hours identified by staff: & \rule{3cm}{0.4pt} \\
+$\square$ Number of internal housekeeping collection sweeps per day: & \rule{3cm}{0.4pt} \\
+$\square$ External contractor pickup frequency (days/week): & \rule{3cm}{0.4pt} \\
+$\square$ Any rooms completely lacking color-coded biomedical bins? & \rule{3cm}{0.4pt} \\
+$\square$ Any bins observed with incorrect color polybag liners? & \rule{3cm}{0.4pt} \\
+$\square$ Total discrete disposal events observed by team: & \rule{3cm}{0.4pt} \\
+$\square$ Number of disposal events exhibiting hesitation ($\ge 2$\,s): & \rule{3cm}{0.4pt} \\
+$\square$ Number of clear cross-contamination / mis-segregation events: & \rule{3cm}{0.4pt} \\
+\end{tabularx}
+\end{infobox}
+
+\subsection{CARD 2: Stealth AI-AMWS Validation Questions}
+Weave these subtle questions naturally into casual conversations to validate Group~M's design innovations:
+\begin{table}[h!]
+\centering
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{p{4.2cm}X}
+\toprule
+\rowcolor{iitblue}
+\color{white}\textbf{AI-AMWS Feature Validated} & \color{white}\textbf{Natural Conversational Probe Question} \\
+\midrule
+\textbf{Feature A: Peak Surge Prediction} & \emph{``Are there specific days or campus events when waste loads spike dramatically? Would getting an automated 24-hour advance forecast help you prepare extra bin capacity?''} \\
+\rowcolor{softgray}
+\textbf{Feature B: Dynamic Bin Sizing} & \emph{``Does it ever happen that the Minor OT Red bin is overflowing while the Doctor Cabin Red bin next door sits almost empty? Could flexible, modular bin sizes between rooms solve that?''} \\
+\textbf{Feature C: Point-of-Disposal LED Guidance} & \emph{``During a stressful procedure with blood on your gloves, would color-coded glowing LED rings around the bin opening guide your hand faster than reading wall signs?''} \\
+\rowcolor{softgray}
+\textbf{Feature D: Custodial Smart Dispatch} & \emph{``For cleaning staff: would a simple phone checklist showing only the rooms that actually need clearing right now save you unnecessary walking rounds?''} \\
+\textbf{Admin Dashboard Analytics} & \emph{``Would a facility-wide live screen showing room-by-room fill percentages and contamination warning logs assist daily management?''} \\
+\bottomrule
+\end{tabularx}
+\caption{Conversational Stealth Validation Probes for AI-AMWS Features.}
+\end{table}
+
+\subsection{CARD 3: In-Situ Behavioral Signals --- Good UX vs.\ UX Breakdown}
+\begin{table}[h!]
+\centering
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{p{7.5cm}X}
+\toprule
+\rowcolor{iitblue}
+\color{white}\textbf{Positive UX Signal (Intuitive Affordance)} & \color{white}\textbf{UX Breakdown Signal (Cognitive / Ergonomic Failure)} \\
+\midrule
+Staff discard waste smoothly without glancing at labels. & Staff pause, read labels, or tilt heads before dropping waste. \\
+\rowcolor{softgray}
+Bins visible immediately upon entering the clinical room. & Bins hidden behind curtains, inward-swinging doors, or desks. \\
+Bin located within arm's reach ($\le 1.2$\,m) of procedure table. & Staff must take $>3$ steps carrying contaminated items across room. \\
+\rowcolor{softgray}
+Polybag color perfectly matches the receptacle's category. & Mismatched, clear, or black municipal bags used in medical bins. \\
+Sharps container mounted securely at chest/elbow level. & Sharps container placed on the floor or balanced precariously on cots. \\
+\rowcolor{softgray}
+Signage features high-contrast bilingual pictograms. & Signage consists of faded English-only text or peeling markers. \\
+Foot pedal operates smoothly with light downward foot pressure. & Stiff, sticking, or broken pedals forcing staff to use gloved hands. \\
+\rowcolor{softgray}
+Bin bodies stand out clearly against wall and tile backgrounds. & Bins visually blend into surrounding wall paint or floor tiles. \\
+\bottomrule
+\end{tabularx}
+\caption{In-Situ Observational Checklist: Positive Indicators vs.\ Failure Modes.}
+\end{table}
+
+\vfill
+\begin{center}
+    \footnotesize\color{darkcharcoal}
+    \textbf{Group M $\cdot$ Foundations of User Experience (FUX 2026--2027) $\cdot$ IIT Gandhinagar}\\
+    \emph{Fieldwork Research Instrument $\cdot$ Strictly for Academic Research Purposes $\cdot$ Do Not Distribute or Leave Unattended}
+\end{center}
+
+\end{document}
